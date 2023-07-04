@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TrekMate</title>
+    <link rel="stylesheet" href="css/welcomePages.css">
+    <script src="js/welcomeAnimation.js" defer></script>
+    <style>
+        body{
+            background-image: url(https://images.unsplash.com/photo-1475359524104-d101d02a042b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1894&q=80);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="logoContent">TrekMate</h2>
+        <h3 id="welcome">Welcome!</h3>
+    </header>
+    <p class="genericText">Login now, or if you're new, sign up using Register.</p>
+    
+    <div id="boxLogin">
+        <div class="buttons">
+            <button type="button" class="loginButton">Login</button><br>
+            <button type="button" onclick="window.location.href='/register.html'" class="registerButton">Register</button>
+        </div>
+
+        <div class="login-form">
+            <div class="userLogin">
+                <form class="userLogin" action="login" method="post">
+                    <input type="text" class="userElement" name="username" autocomplete="username" placeholder="Username">
+                    <input type="password" class="userElement" name="password" autocomplete="current-password" placeholder="Password">
+                    <button type="submit" class="small_login">Login</button>
+                    <button type="button" class="return">Go back</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

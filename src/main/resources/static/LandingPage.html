@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrekMate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/LandingPage.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="icon" href="img/logo1.jpg" type="image/gif/jpg">
+</head>
+<body>
+    <div class="container-fluid">
+		<div class="row">
+            
+            <!-- The nav bar -->
+			<div class="col-md-12 navbar">
+				<a href="#" class="logo"><img src="img/logo1trans.png" alt=""></a>
+				<ul class="nav">
+					<li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+					<!-- INPUT connect to login page here -->
+                    <a href="welcome.html"><button class="btn btn-success ms-lg-3">Login</button></a>
+				</ul>
+			</div>
+            <!-- end of nav -->
+
+            
+            <!-- this is the sliding part -->
+			<div id="slides" class="carousel slide" data-ride="carousel">
+
+			    <div class="carousel-inner">
+			        <div class="carousel-item active">
+
+			                <div class="info">
+                                <h1 class="display-4 text-white">TrekMate</h1>
+                                <h5 class="text-white my-3">Sign up now!</h5>
+                                <!-- INPUT connect to login page and sign UP page here -->
+                                <a href="welcome.html" class="btn me-2 btn-success">Login</a>
+                                <a href="register.html" class="btn btn-outline-light">Sign up</a>
+			      	        </div>
+			        </div>
+
+			        <div class="carousel-item">
+			    	    <div class="info">
+                            <h1>Connect With Friends!</h1>
+                            <p>Sign up now</p>
+                            <!-- INPUT connect to login page and sign UP page here -->
+                            <a href="welcome.html" class="btn me-2 btn-success">Login</a>
+                            <a href="register.html" class="btn btn-outline-light">Sign up</a>
+			      	    </div>
+			        </div>
+                    <div class="carousel-item">
+                        <div class="info">
+                            <h1>Find New Trails!</h1>
+                            <p>Sign up now</p>
+                            <!-- INPUT connect to login page and sign UP page here -->
+                            <a href="welcome.html" class="btn me-2 btn-success">Login</a>
+                            <a href="register.html" class="btn btn-outline-light">Sign up</a>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="info">
+                            <h1>Track Your Progress!</h1>
+                            <p>Sign up now</p>
+                            <!-- INPUT connect to login page and sign UP page here -->
+                            <a href="welcome.html" class="btn me-2 btn-success">Login</a>
+                            <a href="register.html" class="btn btn-outline-light">Sign up</a>
+                            <p></p>
+                        </div>
+                    </div>
+			  </div>
+                <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only"></span>
+                </a>
+                <a class="carousel-control-next" href="#slides" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only"></span>
+                </a>
+			</div>
+            <!-- end of slides -->
+		</div>
+	</div>
+
+
+
+<!-- ABOUT THE APP -->
+<section id="about">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-8 mx-auto text-center">
+                <h6 class="text-primary">About</h6>
+                <h1>What Is TrekMate?</h1>
+                <p> TrekMate is an online web application that allows users to view information on hiking trails, 
+                    find new trails to explore, and log the trails they have conquered–
+                    all while being able to connect with friends and loved ones. By signing up/logging in, 
+                    users can have access to features like a log system that allows users to track the hikes they accomplished (which is viewable on their profile), 
+                    as well as a search system that allows users to find hikes based on location, difficulty, and rating. 
+                    Most importantly, however, TrekMate implements a system that allows the user to set up or join private or public hike meetups. 
+                    This makes TrekMate a universal tool for all hikers, both new and experienced, to interact and track their adventures.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about the app -->
+
+
+<!-- THE FEATURES -->
+    <section id="features">
+        <div class="featcontainer">
+            
+            <div class="row mb-4">
+                <div class="col-md-8 mx-auto text-center">
+                    <h6 class="text-primary">Features</h6>
+                    <h1>Web Application Features</h1>
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect bounceInUp">
+                        <div class="iconbox">
+                            <i class='bx bxs-check-shield'><img src="img/maps.png" alt=""></i>
+
+                        </div>
+                        <h5 class="mt-4 mb-2">Google Maps API</h5>
+                        <p>This API gives you the option update your location for safety purposes and search for new trails at your level.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect">
+                        <div class="iconbox">
+                            <i class='bx bxs-comment-detail'><img src="img/weather.png" alt=""></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">Weather API</h5>
+                        <p>The Weather API with let you know what the current weather conditions look like and if its safe for hiking.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect">
+                        <div class="iconbox">
+                            <i class='bx bxs-comment-detail'><img src="img/calender.png" alt=""></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">Google Calender API</h5>
+                        <p> This API is used to schedule/create hiking events alone or with friends and family.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect">
+                        <div class="iconbox">
+                            <i class='bx bxs-comment-detail'><img src="img/followers.png" alt=""></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">Follow Friends</h5>
+                        <p> TrekMate allows you to follow your friends to see what they’re up to.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect">
+                        <div class="iconbox">
+                            <i class='bx bxs-comment-detail'><img src="img/post.png" alt=""></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">Public Posts</h5>
+                        <p> You can log your recent hikes as a public post to share with other TrekMate users.</p>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect">
+                        <div class="iconbox">
+                            <i class='bx bxs-comment-detail'><img src="img/warning.png" alt=""></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">Environmental Warnings</h5>
+                        <p> Users will recieve warnings such as bear sightings, obstruction on trails, and how busy the area is.</p>
+                    </div>
+                </div>
+                   
+            </div>
+        </div>
+
+    </section><!-- // end of features -->
+
+
+
+
+
+
+<!-- the footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-4">
+                        <img class="logo" src="img/logo-white.svg" alt="">
+                    </div>
+                   
+                    
+                    <div class="col-lg-4">
+                        <h5 class="text-white text-center" >Contact</h5>
+                     
+                        <ul class="list-unstyled text-center text-white my-3">
+                            <li>Address: 8888 University Dr, Burnaby BC V5A1S6</li>
+                            <li>Email: ComputingID@sfu.ca</li>
+                            <li>Phone: (778) 782-3111</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-0">Copyright ©2023 TrekMate. All rights reserved.
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- the footer -->
+
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

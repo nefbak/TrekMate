@@ -1,0 +1,173 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#boxLogin{
+    padding: 20px;
+    border-radius: 25px;
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: #f8DDA4;
+    opacity: 90%;
+    position: relative;
+    overflow: hidden;
+}
+
+#boxRegister{
+    padding: 20px;
+    border-radius: 25px;
+    width: 400px;
+    height: 800px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: #f8DDA4;
+    opacity: 90%;
+    position: relative;
+    overflow: hidden;
+}
+
+#logoContent, #welcome, .genericText{
+    position:absolute;
+    z-index: 2;
+}
+
+#logoContent{
+    color: rgb(60, 60, 60);
+    font-style: italic;
+    left: 44.5%;
+    bottom: 80%;
+    letter-spacing: 5px;
+}
+
+#welcome{
+    color: rgb(255, 255, 255);
+    left: 47.5%;
+    bottom: 75%;
+}
+
+.genericText{
+    color: rgb(255, 255, 255);
+    width: 350px;
+    font-size: medium;
+    left: 39%;
+    bottom: 69%;
+    text-align: center;
+}
+
+.buttons{
+    position: absolute;
+    z-index: 2;
+    top: 200px;
+    margin-left: 100px;
+    border-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.loginButton, .registerButton{
+    font-size: 15pt;
+    color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #345822;
+    height: 100px;
+    width: 200px;
+    margin: 20px auto;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.small_login, .return{
+    font-size: 8pt;
+    color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #345822;
+    height: 40px;
+    width: 100px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.login-form{
+    height: 500px;
+    width: 400px;
+    transition: all 0.5s ease-in-out;
+    padding: 20px 0;
+    position: absolute;
+    z-index: 2;
+}
+
+.register-form{
+    height: 800px;
+    width: 400px;
+    padding: 20px 0px;
+    position: absolute;
+    z-index: 2;
+}
+
+.login-form{
+    top: 75px;
+    right: 700px;
+}
+
+.register-form{
+    top: 20px;
+    right: 105px;
+}
+
+.loginButton-hide, .registerButton-hide{
+    animation: fadeOut 0.3s linear forwards;
+}
+
+.loginButton-show, .registerButton-show{
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.login-form-move{
+    right: 105px;
+}
+
+.userLogin, .userRegister{
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+}
+
+.userLogin{
+    gap: 30px;
+}
+
+.userRegister{
+    gap:20px;
+}
+
+.userElement{
+    height: 60px;
+    width: 300px;
+    outline: none;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+

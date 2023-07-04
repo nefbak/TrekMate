@@ -1,0 +1,129 @@
+
+
+main {
+    margin-top: 50px;
+}
+
+
+/* the header */
+.header {
+    padding: 10px 16px;
+    background: #ffffff;
+    color: #345822;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  .content {
+    padding: 16px;
+  }
+
+  #title {
+    margin-top: 10px;
+  }
+
+  #logout {
+    padding: 10px 16px;
+    background: #61A43D;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    float: right;
+    text-align: right;
+    width: 70px;
+    height: 35px;
+    font-size: 10pt;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+  
+  .sticky + .content {
+    padding-top: 102px;
+  }
+
+
+table{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.name{
+    color: #345822;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.email{
+    color: #61A43D;
+    font-size: 20px;
+    text-align: center;
+}
+
+#attributes{
+    color: #345822;
+}
+
+#values{
+    color: #61A43D;
+}
+
+/* FAVEORITE LIST */
+/* .favList{
+    width: 200px;
+    height: 150px;
+    overflow-y: auto;
+    display: inline-block;
+}
+
+.favList a{
+    background-color:#eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.favList a:hover{
+    background-color: #ccc;
+
+}
+
+.favList a.Ftitle{
+    background-color: #61A43D;
+    color: white;
+} */
+
+
+
+/* HIKE HISTORY */
+/* .hikeHist{
+    width: 200px;
+    height: 150px;
+    overflow-y: auto;
+    display: inline-block;
+}
+
+.hikeHist a{
+    background-color:#eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.hikeHist a:hover{
+    background-color: #ccc;
+
+}
+
+.hikeHist a.Htitle{
+    background-color: #61A43D;
+    color: white;
+} */
