@@ -24,7 +24,7 @@
      </script> 
      <div class="header" id="myHeader">
       
-        <h2 id="name"><img src="/img/for.png" alt="TrekMate" style="width:40px;height:40px;">TrekMate
+        <h2 id="name"><img src="/img/logo1.jpg" alt="TrekMate" style="width:40px;height:40px;">TrekMate
             <div id="logout">Logout</div>
         </h2>
         
@@ -34,8 +34,8 @@
          
 
         <p th:each="user:${us}" >
-            <div th:text="${user.name}" class="name"></div>
-        
+           <div th:text="${user.name}" class="name"></div>
+
             <br>
  
             <div th:text="${user.email}" class="email"></div>
@@ -69,7 +69,8 @@
             <thead>
                 <tr>
                     <th id="attributes">Age:</th>
-                    <td th:text="{#numbers.formatInteger(user.age,3)}" id="values"></td>
+                    <!--<td th:text="{#numbers.formatInteger(user.age,3)}" id="values"></td>-->
+                    <td th:text="${user.age}" id="values"></td>
                 </tr>
             </thead>
             <tbody>
@@ -83,18 +84,28 @@
                 <td th:text="${user.location}" id="values"></td>
               </tr>
 
+              <tr>
+                <th id="attributes">ID:</th>
+                <td th:text="${user.uid}" id="values"></td>
+              </tr>
+
             </tbody>
-          </table> 
+          
           <br>
-          <form action="/user/userPage/'+${user.id}+'/edit'" method="post" class="text-center">
-            <input type="hidden" name="uiddd" th:value="${user.id}">
+          <!--<form th:action="'/users/edit/'+${user.uid}" method="get" class="text-center"> 
+          <form th:action="@{/users/edit/{uid}(uid=${user.uid})}" th:object="${user}" method="get">
+            <input type="hidden" name="uiddd" th:value="${user.uid}"/>
             <button class="btn btn-success"  type="submit" >Edit Profile</button>
-          </form>
+          </form> 
 
+          <button class="btn btn-success"  type="submit"> <a id="edit" th:href="@{/users/edit/{uid}(uid=${user.uid})}">Edit</a></button> -->
 
+          <form th:action="'/users/edit/'+${user.uid}" method="post">
+            <input type="hidden" name="uiddd" th:value="${user.uid}"/>
+            <button class="btn btn-success"  type="submit" >Edit Profile</button>
+          </form> 
 
-
-
+          </table> 
         <!-- favorite list + hike history (future iteration) -->
         <!-- <p>
             <div class="favList">

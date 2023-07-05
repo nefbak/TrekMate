@@ -13,16 +13,18 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private String difficulty;
 
     public User() {
     }
 
-    public User(int age, String location, String name, String email, String password) {
+    public User(int age, String location, String name, String email, String password, String difficulty) {
         this.age = age;
         this.location = location;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.difficulty = difficulty;
     }
 
     public int getAge() {
@@ -74,7 +76,13 @@ public class User {
     }
 
 
+    public String getDifficulty() {
+        return difficulty;
+    }
 
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
     
     
 }

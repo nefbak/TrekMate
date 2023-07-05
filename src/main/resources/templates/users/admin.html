@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <script src="/js/process.js" defer></script>
+    <title>Display</title>
+    <div class="header" id="myHeader">
+        
+        <h2 id="title"><img src="for.png" alt="TrekMate" style="width:40px;height:40px;">TrekMate
+            <div id="logout">Logout</div>
+        </h2>
+        
+    </div>
+</head>
+<body>
+    <main class="containter-fluid">
+        <div class="row justify-content-center">
+            <style>
+                table {
+                  border-collapse: collapse;
+                  width: 100%;
+                }
+                
+                td, th {
+                  border: 1px solid #dddddd;
+                  text-align: left;
+                  padding: 10px;
+                }
+                </style>
+            <div class="col-md-4">
+                <center><h1>ADMIN VIEW</h1></center>
+                <center>Delete users</center>
+                <table>
+                    <li th:each="user:${us}" style='list-style-type: none' name="" >
+                        <style>
+                            span{
+                                display: inline-block;
+                                text-align: center;
+                                font-weight: bold;
+                            }
+                        </style>
+                           
+                            <tr>
+                                <th>Name</th>
+                                <th>ID</th>
+                                <th> </th>
+                              </tr>
+                              <tr>
+                                <td th:text="${user.name}"></td>
+                                <td th:text="${user.id}"></td>
+                                <td>
+                                    <form action="/user/remove" method="post">
+                                        <input type="hidden" name="uidd" th:value="${user.id}" />
+                                        <button style = "background: #61A43D" class= "btn btn-primary" type="submit">DELETE STUDENT</button> 
+                                
+                                    </form>
+                                </td>
+                              </tr>            
+                         
+                    </li>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+         window.onscroll = function() {myFunction()};
+         
+         var header = document.getElementById("myHeader");
+         var sticky = header.offsetTop;
+         
+         function myFunction() {
+           if (window.pageYOffset > sticky) {
+             header.classList.add("sticky");
+           } else {
+             header.classList.remove("sticky");
+           }
+         }
+     </script>
+</body>
+</html>
