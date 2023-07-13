@@ -24,7 +24,7 @@
      </script> 
      <div class="header" id="myHeader">
       
-        <h2 id="name"><img src="/img/logo1.jpg" alt="TrekMate" style="width:40px;height:40px;">TrekMate
+        <h2 id="name"><img src="/img/logo1.jpg" alt="TrekMate" style="width:40px;height:40px;">
             <div id="logout">Logout</div>
         </h2>
         
@@ -39,11 +39,12 @@
             <br>
  
             <div th:text="${user.email}" class="email"></div>
+
            
-        </p>
+
         <br>
        
-        <table class="table w-auto" th:each="user:${us}">
+        <table class="table w-auto"> 
             <!-- display only -->
             <!-- <thead>
                 <tr>
@@ -89,6 +90,15 @@
                 <td th:text="${user.uid}" id="values"></td>
               </tr>
 
+              <tr>
+                <center>
+                <form th:action="'/users/edit/'+${user.uid}" method="post">
+                  <input type="hidden" name="uiddd" th:value="${user.uid}"/>
+                  <button class="btn btn-success"  type="submit" style="text-align: center;">Edit Profile</button>
+                </form> 
+              </center>
+              </tr>
+
             </tbody>
           
           <br>
@@ -99,13 +109,9 @@
           </form> 
 
           <button class="btn btn-success"  type="submit"> <a id="edit" th:href="@{/users/edit/{uid}(uid=${user.uid})}">Edit</a></button> -->
-
-          <form th:action="'/users/edit/'+${user.uid}" method="post">
-            <input type="hidden" name="uiddd" th:value="${user.uid}"/>
-            <button class="btn btn-success"  type="submit" >Edit Profile</button>
-          </form> 
-
+          
           </table> 
+        </p>
         <!-- favorite list + hike history (future iteration) -->
         <!-- <p>
             <div class="favList">

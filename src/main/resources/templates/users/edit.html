@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Edit Student</title>
+    <title>Edit User</title>
     <div class="header" id="myHeader">
         
-      <!--  <h2 id="title"><img src="for.png" alt="TrekMate" style="width:40px;height:40px;">TrekMate
+      <h2 id="title"><img src="/img/logo1.jpg" alt="TrekMate" style="width:70px;height:60px;">
             <div id="logout">Logout</div>
-        </h2> -->
+        </h2> 
         
     </div>
 </head>
@@ -21,21 +21,21 @@
 
         <div class="mb-3">
             <center>
-                <img src="pencil.png" alt="name" style="width:30px;height:30px;">
+                <img src="/img/pencil.png" alt="name" style="width:30px;height:30px;">
             <input type="text" id="name" name="name" class="form-control-lg"
                 th:value="${user.name}" placeholder="Name">
             </center>
         </div>
         <div class="mb-3">
             <center>
-                <img src="pin.png" alt="name" style="width:30px;height:30px;">
+                <img src="/img/pin.png" alt="location" style="width:30px;height:30px;">
             <input type="text" id="location" name="location" class="form-control-lg"
                 th:value="${user.location}" placeholder="Location">
             </center>
         </div>
         <div class="mb-3">
             <center>
-                <img src="stairs.png" alt="name" style="width:30px;height:30px;">
+                <img src="/img/stairs.png" alt="name" style="width:30px;height:30px;">
             <label for="difficulty">Choose a Difficulty/Experience Level:</label>
            <!-- <select type="number" id="difficulty" name="difficulty" class="form-control-lg"
             placeholder="">
@@ -49,14 +49,14 @@
         </div>
         <div class="mb-3">
             <center>
-                <img src="mail.png" alt="email" style="width:30px;height:30px;">
+                <img src="/img/mail.png" alt="email" style="width:30px;height:30px;">
             <input type="text" id="email" name="email" class="form-control-lg"
                 th:value="${user.email}" placeholder="Email">
             </center>
         </div>
         <div class="mb-3">
             <center>
-                <img src="cake.png" alt="age" style="width:30px;height:30px;">
+                <img src="/img/cake.png" alt="age" style="width:30px;height:30px;">
             <input type="number" id="age" name="age" class="form-control-lg"
                 th:value="${user.age}" placeholder="Age">
             </center>
