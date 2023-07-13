@@ -16,7 +16,7 @@
   }
 
   #logout {
-    padding: 10px 16px;
+   /* padding: 10px 16px;
     background: #61A43D;
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
@@ -24,9 +24,29 @@
     text-align: right;
     width: 70px;
     height: 35px;
-    font-size: 10pt;
+    font-size: 10pt;  
+    
+    margin-top: 5px; */
     margin-right: 10px;
-    margin-top: 5px;
+    text-align: right;
+    display: inline-block;
+
+    margin: 0 auto;
+    float: right;
+  }
+
+  #trail {
+
+   /* text-align: right;
+    
+    margin-right: 10px;
+    margin-top: 5px; */
+    margin-right: 10px;
+    display: inline-block;
+    float: right;
+
+ 
+    margin: 0 auto;
   }
 
   .sticky {
@@ -38,3 +58,15 @@
   .sticky + .content {
     padding-top: 102px;
   }  
+
+  .action_btn {
+    width: 200px;
+    margin: 0 auto;
+    display: inline;
+  }
+
+  .buttons {
+    width: 200px;
+    margin: 0 auto;
+    display: inline;
+  }

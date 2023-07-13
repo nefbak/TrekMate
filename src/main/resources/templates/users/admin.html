@@ -11,8 +11,35 @@
     <title>Display</title>
     <div class="header" id="myHeader">
         
-        <h2 id="title"><img src="for.png" alt="TrekMate" style="width:40px;height:40px;">TrekMate
-            <div id="logout">Logout</div>
+        <h2 id="title"><img src="/img/logo1.jpg" alt="TrekMate" style="width:70px;height:60px;">
+
+                <div class="buttons">
+                   <!-- <button id="logout" style = "background: #61A43D" class= "btn btn-primary">Logout</button>
+                    <form action="/user/remove" method="post">
+                    <button id="trail" style = "background: #61A43D" class= "btn btn-primary" type="submit">Add Trail</button> -->
+                    <style>
+                        
+                        
+                        #but {
+                          border: 10px solid #dddddd;
+                          text-align: left;
+                          padding: 10px;
+                          width: 10px;
+                        }
+                        </style>
+
+                    <table style="border-spacing: 10px;">
+                        <tr id="but"> <button id="logout" style = "background: #61A43D" class= "btn btn-primary">Logout</button></tr>
+                        <tr id="but"> 
+                            <!--<form action="/user/remove" method="post"> -->
+                            <a href="../../addTrail.html">
+                                <button id="trail" style = "background: #61A43D" class= "btn btn-primary" type="submit">Add Trail</button>
+                            </a>
+                            <!-- </form>-->
+                        </tr>
+                    </table>
+                </div>
+          
         </h2>
         
     </div>
@@ -32,7 +59,7 @@
                   padding: 10px;
                 }
                 </style>
-            <div class="col-md-4">
+            <div >
                 <center><h1>ADMIN VIEW</h1></center>
                 <center>Delete users</center>
                 <table>
@@ -52,10 +79,10 @@
                               </tr>
                               <tr>
                                 <td th:text="${user.name}"></td>
-                                <td th:text="${user.id}"></td>
+                                <td th:text="${user.uid}"></td>
                                 <td>
                                     <form action="/user/remove" method="post">
-                                        <input type="hidden" name="uidd" th:value="${user.id}" />
+                                        <input type="hidden" name="uidd" th:value="${user.uid}" />
                                         <button style = "background: #61A43D" class= "btn btn-primary" type="submit">DELETE STUDENT</button> 
                                 
                                     </form>
@@ -66,7 +93,7 @@
                 </table>
             </div>
         </div>
-    </main>
+    
 
     <script>
          window.onscroll = function() {myFunction()};
@@ -82,5 +109,6 @@
            }
          }
      </script>
+     </main>
 </body>
 </html>

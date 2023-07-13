@@ -61,22 +61,38 @@ public class UsersController {
 
     @PostMapping("/login")
     public String login(@RequestParam Map<String, String> newuser, HttpServletResponse response, Model model, @ModelAttribute("user") User user){
-        String Name = newuser.get("username");
+        String Name = newuser.get("name");
         String Password = newuser.get("password");
         System.out.println("Name "+Name);
         System.out.println("Pass: "+Password);
-        User u = userRepo.findByName(Name).get(0);
+        System.out.println("Findbyname: "+userRepo.findByName(Name).size());
+        
+        String adName= "admin";
+        String adPass = "admin";
+
+        if (Password.equals(adPass) && Name.equals(adName)){
+            List<User> users = userRepo.findAll();
+        
+            model.addAttribute("us", users);
+            return "users/admin";
+        }
+
+        if (userRepo.findByName(Name).size() != 0){
+         User u = userRepo.findByName(Name).get(0);
+        
         System.out.println("User Repo find: " + u.getName());
         System.out.println("HI " + u.getPassword());
         String be = u.getPassword();
+
         if (Password.equals(be)){
             System.out.println("PLEASE");
             model.addAttribute("user", u);
             return "users/userPage";
         }
         response.setStatus(201);
-         model.addAttribute("us", u);
+        model.addAttribute("us", u);
         //return "redirect:/userPage.html";
+    }
         return "redirect:/welcome.html";
     }
     
@@ -95,7 +111,7 @@ public class UsersController {
     }
 
     @PostMapping("/users/{uid}")
-    public String viewUser(Model model, @RequestParam(name = "uid") String uid, HttpServletResponse response){
+    public String viewUser(Model model, @RequestParam(name = "uiddd") String uid, HttpServletResponse response){
 
         System.out.println("s");
         System.out.println("Get User " + uid);
@@ -147,7 +163,7 @@ public class UsersController {
         List<User> users = userRepo.findAll();
         
         model.addAttribute("us", users);
-        return "students/admin";
+        return "users/admin";
     }
 
     @PostMapping("/user/remove")
@@ -158,7 +174,7 @@ public class UsersController {
         User u = userRepo.findByUid(uid).get(0);
         userRepo.delete(u); //delete from database
 
-        return "user/removedUser";
+        return "users/removedUser";
     }
 
     //@PostMapping("/user/userPage/{uid}/edit")
@@ -234,11 +250,25 @@ public class UsersController {
 
         User u = userRepo.findById(id).get();
 
-        userRepo.delete(u); //delete from database
+        //userRepo.delete(u); //delete from database
 
-        User us = userRepo.save(new User(newAge, newLocation, newName, newEmail, pass, newDifficulty));
+        u.setAge(newAge);
 
-        model.addAttribute("user", us);
+        u.setDifficulty(newDifficulty);
+
+        u.setEmail(newEmail);
+
+        u.setName(newName);
+
+        u.setPassword(pass);
+
+        u.setLocation(newLocation);
+
+        //User us = userRepo.save(us(newAge, newLocation, newName, newEmail, pass, newDifficulty));
+
+        userRepo.save(u);
+        
+        model.addAttribute("user", u);
 
         return "users/edited";
     } 
