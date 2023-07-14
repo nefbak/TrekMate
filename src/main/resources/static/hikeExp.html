@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/hikeExp.css">
+    <title>Hike Review in Progress</title>
+</head>
+<body>
+    <div id="formContainer">
+        <h2 id="reviewHeader">Review your hike!</h2>
+        <form id="reviewForm" action="/postReview" method="post">
+            <input type="text" name="location" class="reviewElement" placeholder="Location of Hike">
+            <input type="text" name="trailName" class="reviewElement" placeholder="Name of Trail">
+            <input type="date" name="date" class="reviewElement">
+            <label for="difficulty">On a scale from 1-10, how difficult was this hike?</label>
+            <input type="range" name="difficulty" id="reviewDifficulty" min="1" max="10">
+            <textarea wrap="hard" form="reviewForm" name="paragraph" id="reviewText" placeholder="Tell your story!"></textarea>
+            <!--input type="file" name="photos" id="reviewPhotos"-->
+            <!--label for="reviewPhotos">Upload your photos</label-->
+            <button type="submit" class="options">Post</button>
+            <button type="button" onclick="window.location.href='/welcome.html'" class="options" disabled>Go back to Profile</button>
+        </form>
+    </div>
+    
+</body>
+</html>

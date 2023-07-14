@@ -29,31 +29,24 @@ body{
 }
 
 #logoContent, #welcome, .genericText{
-    position:absolute;
-    z-index: 2;
+    text-align: center;
 }
 
 #logoContent{
     color: rgb(60, 60, 60);
     font-style: italic;
-    left: 44.5%;
-    bottom: 80%;
     letter-spacing: 5px;
 }
 
 #welcome{
     color: rgb(255, 255, 255);
-    left: 47.5%;
-    bottom: 75%;
 }
 
 .genericText{
     color: rgb(255, 255, 255);
     width: 350px;
     font-size: medium;
-    left: 39%;
-    bottom: 69%;
-    text-align: center;
+    padding-left: 5%;
 }
 
 .buttons{
