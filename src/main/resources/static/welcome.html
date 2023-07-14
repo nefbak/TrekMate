@@ -16,28 +16,25 @@
 </head>
 
 <body>
-    <header>
+    <div id="boxLogin">
         <h1 id="logoContent">TrekMate</h2>
         <h3 id="welcome">Welcome!</h3>
-    </header>
-    <p class="genericText">Login now, or if you're new, sign up using Register.</p>
-    
-    <div id="boxLogin">
-        <div class="buttons">
-            <button type="button" class="loginButton">Login</button><br>
-            <button type="button" onclick="window.location.href='/register.html'" class="registerButton">Register</button>
-        </div>
-
-        <div class="login-form">
-            <div class="userLogin">
-                <form class="userLogin" action="login" method="post">
-                    <input type="text" class="userElement" name="name" autocomplete="username" placeholder="Name">
-                    <input type="password" class="userElement" name="password" autocomplete="current-password" placeholder="Password">
-                    <button type="submit" class="small_login">Login</button>
-                    <button type="button" class="return">Go back</button>
-                </form>
+        <p class="genericText">Login now, or if you're new, sign up using Register.</p>
+            <div class="buttons">
+                <button type="button" class="loginButton">Login</button><br>
+                <button type="button" onclick="window.location.href='/register.html'" class="registerButton">Register</button>
             </div>
-        </div>
+
+            <div class="login-form">
+                <div class="userLogin">
+                    <form class="userLogin" action="login" method="post">
+                        <input type="text" class="userElement" name="name" autocomplete="username" placeholder="Name">
+                        <input type="password" class="userElement" name="password" autocomplete="current-password" placeholder="Password">
+                        <button type="submit" class="small_login">Login</button>
+                        <button type="button" class="return">Go back</button>
+                    </form>
+                </div>
+            </div>
     </div>
 </body>
 </html>
