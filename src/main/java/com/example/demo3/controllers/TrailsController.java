@@ -35,11 +35,11 @@ public class TrailsController {
         String Name = newtrail.get("trailName");
         float Lat = Float.parseFloat(newtrail.get("lat"));
         float Lon = Float.parseFloat(newtrail.get("lon"));
-        String Location = newtrail.get("location");
-        Trail t = trailRepo.save(new Trail(Name, Lat, Lon, Location));
+        String Location = newtrail.get("area");
+        trailRepo.save(new Trail(Name, Lat, Lon, Location));
         response.setStatus(201);
-         model.addAttribute("tr", t);
-        //return "redirect:/userPage.html";
-        return "/addTrail";
+         //model.addAttribute("tr", t);
+        //return "redirect:/addTrail.html";
+        return "users/addedTrail";
     }
 }
