@@ -4,7 +4,7 @@ body{
 
 #boxLogin{
     padding: 20px;
-    border-radius: 25px;
+    border-radius: 10px;
     width: 400px;
     height: 600px;
     margin: auto;
@@ -17,7 +17,7 @@ body{
 
 #boxRegister{
     padding: 20px;
-    border-radius: 25px;
+    border-radius: 10px;
     width: 400px;
     height: 800px;
     margin: auto;
@@ -65,7 +65,7 @@ body{
     border: none;
     outline: none;
     cursor: pointer;
-    background-color: #345822;
+    background-color: #61a43d;
     height: 100px;
     width: 200px;
     margin: 20px auto;
@@ -73,17 +73,23 @@ body{
     opacity: 1;
 }
 
-.small_login, .return{
+
+
+.small_submit, .return{
     font-size: 8pt;
     color: rgb(255, 255, 255);
     border: none;
     outline: none;
     cursor: pointer;
-    background-color: #345822;
+    background-color: #61a43d;
     height: 40px;
     width: 100px;
     margin: 10px auto;
     border-radius: 10px;
+}
+
+.loginButton:hover, .registerButton:hover, .small_submit:hover, .return:hover{
+    background-color: #345822;
 }
 
 .login-form{
@@ -164,3 +170,23 @@ body{
     padding-right: 30px;
 }
 
+#difficulty{
+    appearance: none;
+    height: 20px;
+    width: 60%;
+    background-image: linear-gradient(to right, rgb(176, 255, 176), rgb(253, 134, 134));
+    outline: none;
+}
+
+#difficulty::-webkit-slider-thumb{
+    appearance: none;
+    cursor: pointer;
+    width: 10px;
+    height: 30px;
+    background: white;
+}
+
+#difficulty::-webkit-slider-runnable-track{
+    appearance: none;
+    cursor: pointer;
+}
