@@ -19,25 +19,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.demo3.models.Trail;
-import com.example.demo3.models.TrailRepository;
+import com.example.demo3.models.Review;
+import com.example.demo3.models.ReviewRepository;
 import com.example.demo3.models.User;
 
 import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
-public class TrailsController {
+public class ReviewsController {
     
     @Autowired
-    private TrailRepository trailRepo;
+    private ReviewRepository reviewRepo;
 
-    @GetMapping("/trails/view")
+  /*  @GetMapping("/trails/view")
     public String getAllTrails(Model model){
         System.out.println("Getting all trails");
         // TODO: get all students from database
-        List<Trail> trails = trailRepo.findAll();
+        List<Review> reviews = reviewRepo.findAll();
         
-        model.addAttribute("tr", trails);
+        model.addAttribute("re", reviews);
         return "users/trailPage";
     }
 
@@ -73,5 +73,5 @@ public class TrailsController {
         trailRepo.delete(t); //delete from database
 
         return "users/removedTrail";
-    }
+    } */
 }

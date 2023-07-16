@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/process.js" defer></script>
+    <title>Display</title>
+    <div class="topnavbar">
+        <a href="../../add.html">Add</a>
+    </div>
+</head>
+<body>
+    <main class="containter-fluid">
+        <div class="row justify-content-center">
+            <!--<style th:inline="css">
+                            
+                "color: [['${student.colour}']]"
+                
+            </style> -->
+            <style>
+                li{
+                    display: inline-block;
+                    margin-right:10px;
+                }
+            </style>
+            <div class="col-md-4">
+                <center><h1>Trails</h1></center>
+                <center>Click on Trail's name to access their page</center>
+                <!--<span th:if="${error != null}" th:text="'ERROR: ' + ${error}"></span> -->
+                <ul>
+                    <li th:each="trail:${tr}" style='list-style-type: none' name="" >
+                        <!-- th:inline style = "css"      th:style="'width:' +${student.weight}+ 'px'"
+                        th:style="'height:' +${student.name}+ 'px'" th:style= "'border: 1px solid' +${student.colour}"-->
+                                               <!--th:styleappend="'width:'+${student.weight}+ 'px'" -->
+                        <!--th:styleappend="'height:' +${student.height}+ 'px'" border-right: 1px solid; -->
+                        <!--<span th:style="'line-height:' +${student.height*2}+ 'px'" style='display: inline-block'>
+                            <span th:style="'border-right: 1px solid ' +${student.colour}">
+                                <span th:text="${student.name}"></span>
+                            </span>
+                        </span> -->
+                        <style>
+                            span{
+                                display: inline-block;
+                                text-align: center;
+                                font-weight: bold;
+                            }
+                            #map{
+                             height: 200px;
+                             width: 200px;
+                            }
+                        </style>
+                        <span style='border: 1px solid black'>
+                            <span style="height: 50px" > 
+                                <span style='text-align: center;' >
+                                    <!--<form th:action="'/students/view/'+${student.uid}" method="post"> -->
+                                    <!--<a href="../../add.html"><span th:text="${student.name}" th:style="'color: ' +${student.colour}" ></span></a> <br> -->
+                                        <input type="hidden" name="uid" th:value="${trail.tid}" />
+                                        <button type="submit" id="submitButton"><span th:text="${trail.name}" ></span></button> <br>
+                                        <span th:text="${trail.location}"></span>
+                                        <span th:text="${trail.lat}"></span>
+                                        <span th:text="${trail.lon}"></span>
+                                    
+                                   <!-- </form> -->
+                                </span>
+                            </span>                       
+                        </span> 
+                        <div th:switch="${trail.name}" style = 'margin-bottom: 20px;'>
+                            <span th:case="'Joel Miller'">The Last of Us</span>
+                            <span th:case="'Ellie Williams'">The Last of Us</span>
+                            <span th:case="'Sal Vulcano'">Impractical Jokers</span>
+                            <span th:case="'Coquitlam Crunch'"><div id="map">
+
+                            </div>
+                            <script th:inline="javascript">
+                                /*<![CDATA[*/
+                                function initMap(){
+                                    var options = {
+                                        zoom:15,
+                                        center:{lat: /*[[${trail.lat}]]*/ 49.2826,lng: /*[[${trail.lon}]]*/ -123.1294}
+                                    }
+                        
+                                    var map = new google.maps.Map(document.getElementById('map'), options);
+                        
+                                    var marker = new google.maps.Marker({
+                                        position:{lat: /*[[${trail.lat}]]*/ 49.2826,lng: /*[[${trail.lon}]]*/ -123.1294},
+                                        map:map
+                                    });
+                        
+                                    var infoWindow = new google.maps.InfoWindow({
+                                        content:'<h1>Nelson Park</h1> <br> Very fun area'
+                                    });
+                        
+                                    marker.addListener('click', function(){
+                                        infoWindow.open(map, marker);
+                                    });
+                                }
+                                /*]]>*/
+                            </script>
+                            <script async defer  
+                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZselLCynQZfG2uXE1x2l4DhB0_ZvtqXs&callback=initMap">   
+                            </script></span>
+                            <span th:case="'Brian Quinn'">Impractical Jokers</span>
+                            <span th:case="'Joe Gatto'">Impractical Jokers</span>
+                            <span th:case="'Sal'">Impractical Jokers</span>
+                            <span th:case="'Murr'">Impractical Jokers</span>
+                            <span th:case="'Q'">Impractical Jokers</span>
+                            <span th:case="'Joe'">Impractical Jokers</span>
+                            <span th:case="*">General Trail</span>
+                        </div> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
