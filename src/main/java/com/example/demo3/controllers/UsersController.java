@@ -58,6 +58,35 @@ public class UsersController {
         //return "redirect:/userPage.html";
         return "users/userPage";
     }
+    @PostMapping("/Landing/{uid}")
+    public String Landing(Model model, @PathVariable(name = "uid") int uid, HttpServletResponse response){
+    //List<Student> student = studentRepo.findByUid(uid);  
+    System.out.println("s");
+    System.out.println("Get UID STRING " + uid);
+    //int id = Integer.parseInt(uid);
+    System.out.println("Get User " + uid);
+    User u = userRepo.findById(uid).get();
+    System.out.println("HELLO" + u.getName());
+
+    model.addAttribute("user", u);
+    //return "showUser";
+    return "redirect:../LandingPage.html";
+}
+
+    @PostMapping("users/trailS/{uid}")
+        public String trailSearch(Model model, @PathVariable(name = "uid") int uid, HttpServletResponse response){
+        //List<Student> student = studentRepo.findByUid(uid);  
+        System.out.println("s");
+        System.out.println("Get UID STRING " + uid);
+        //int id = Integer.parseInt(uid);
+        System.out.println("Get User " + uid);
+        User u = userRepo.findById(uid).get();
+        System.out.println("HELLO" + u.getName());
+
+        model.addAttribute("user", u);
+        //return "showUser";
+        return "users/trailSearch";
+    }
 
     @PostMapping("/login")
     public String login(@RequestParam Map<String, String> newuser, HttpServletResponse response, Model model, @ModelAttribute("user") User user){
