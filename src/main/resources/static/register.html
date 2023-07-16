@@ -14,11 +14,8 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1 id="logoContent">TrekMate</h2>
-    </header>
-
     <div id="boxRegister">
+        <!--img src="logo1.jpg" alt="TrekMate" style="width:50px;height:30px;"-->
         <div class="register-form">
             <!--<form class="userRegister" action="/signup" method="post">-->
             <form class="userRegister" action="/signup" method="post">
@@ -28,8 +25,8 @@
                 <input type="email" class="userElement" name="email" autocomplete="email" placeholder="Email">
                 <input type="password" class="userElement" name="password" autocomplete="new-password" placeholder="New Password"><br>
                 <label for="difficulty"> How experienced at hiking are you?</label>
-                <input type="range" name="difficulty" min="1" max="10">
-                <button type="submit" class="small_login">Register</button>
+                <input type="range" id="difficulty" name="difficulty" min="1" max="10">
+                <button type="submit" class="small_submit">Register</button>
                 <button type="button" onclick="window.location.href='/welcome.html'" class="return">Go back</button>
             </form>
         </div>
