@@ -11,7 +11,39 @@
     <div class="header" id="myHeader">
         
         <h2 id="title"><img src="img/logo1.jpg" alt="TrekMate" style="width:70px;height:60px;">
-            <div id="logout">Logout</div>
+            <div class="buttons">
+                <!-- <button id="logout" style = "background: #61A43D" class= "btn btn-primary">Logout</button>
+                 <form action="/user/remove" method="post">
+                 <button id="trail" style = "background: #61A43D" class= "btn btn-primary" type="submit">Add Trail</button> -->
+                 <style>
+                     
+                     
+                     #but {
+                       border: 10px solid #dddddd;
+                       text-align: left;
+                       padding: 10px;
+                       width: 10px;
+                     }
+                     </style>
+
+                 <table style="border-spacing: 10px;">
+                     <tr id="but"> <a href="../../LandingPage.html"><button id="logout" style = "background: #61A43D" class= "btn btn-primary">Logout</button></a></tr>
+                     <tr>
+                         <form action="/trail/adminView" method="get">
+                             <!--<input type="hidden" name="uidd" th:value="${user.uid}" />-->
+                             <button id="trail" style = "background: #61A43D" class= "btn btn-primary" type="submit">Trail Admin Page</button> 
+                       
+                         </form>
+                     </tr>
+                     <tr>
+                        <form action="/user/adminView" method="get">
+                            <!--<input type="hidden" name="uidd" th:value="${user.uid}" />-->
+                            <button id="trail" style = "background: #61A43D" class= "btn btn-primary" type="submit">User Admin Page</button> 
+                      
+                        </form>
+                    </tr>
+                 </table>
+             </div>
         </h2>
         
     </div>
