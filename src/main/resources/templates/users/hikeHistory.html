@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hike History</title>
+    <link rel="stylesheet" href="/css/hikeHistory.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="/js/hikeHistory.js" defer></script>
+</head>
+<body>
+    
+     <div class="header" id="myHeader">
+        
+        <h2 id="name"><img src="/img/for.png" alt="TrekMate" style="width:40px;height:40px;">TrekMate
+            <div id="logout">Logout</div>
+        </h2>
+        
+    </div>
+    <main>
+        <div class="title">Hike History</div>
+        <br>
+        <!-- <table class="table w-75">
+            <thead class="tableHeaders">
+              <tr>
+                <th id="tableHeaders">Hike Name</th>
+                <th id="tableHeaders">Date</th>
+                <th id="tableHeaders" colspan="2">Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td id="sections">Grouse Grind</td>
+                <td id="sections">3/6/23</td>
+                <td>
+                     <div class="container1">
+                        <button type="submit" class="revButton">Journal</button>
+                        <dialog class="revPopup" id="modal">
+                            <h2>Your Journal:</h2>
+                            <p>3/6/23</p>
+                            <p id="theReview">Enjoyed the view despite how difficult it was! Would definitelly go again!</p>
+                            <button type="button"  class="closeRev">back</button>
+                        </dialog>
+                     </div>
+                </td>
+                <td>
+                    <div class="container2">
+                        <button type="submit" class="deleteButton">Delete</button>
+                        <dialog class="deletePopup">
+                          <span>Are you sure you want to delete this from your hike history?</span>
+                          <br>
+                          <br>
+                          <button type="button" class="closeDelete">Cancel</button>
+                          <button type="button" class="deleteHike">Delete Hike</button>
+                        </dialog>
+                    </div>
+                </td>
+              </tr> -->
+
+
+               <!-- templated ver  -->
+
+
+              
+                <table class="table w-7" >
+            <thead class="tableHeaders" th:each="trail:${tr}">
+              <tr>
+                <th id="tableHeaders">Hike Name</th>
+                <th id="tableHeaders">Location</th>
+                <th id="tableHeaders" colspan="2">Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td id="sections" th:text="${trail.name}" ></td>
+                <td id="sections" th:text="${trail.location}">3/6/23</td>
+                <td>
+                     <div class="container1">
+                        <button type="submit" class="revButton">Journal</button>
+                        <dialog class="revPopup" id="modal">
+                            <h2>Your Journal:</h2>
+                            <p th:text="${trail.reviewDate}"></p>
+                            <p id="theReview" th:text="${trail.review}"></p>
+                            <button type="button"  class="closeRev">back</button>
+                        </dialog>
+                     </div>
+                </td>
+                <td>
+                    <div class="container2">
+                        <button type="submit" class="deleteButton">Delete</button>
+                        <dialog class="deletePopup">
+                          <span>Are you sure you want to delete this from your hike history?</span>
+                          <br>
+                          <br>
+                          <button type="button" class="closeDelete">Cancel</button>
+                          <button type="button" class="deleteHike">Delete Hike</button>
+                        </dialog>
+                    </div>
+                </td>
+              </tr>
+              
+
+             
+              
+
+              <!-- delete button -->
+              <!-- <form action="/user/userPage/'+${user.id}+'/edit'" method="post" class="text-center">
+                <input type="hidden" name="uiddd" th:value="${user.id}">
+                <button class="btn btn-success"  type="submit" >Edit Profile</button>
+              </form> -->
+            </tbody>
+          </table>
+          
+    </main>
+</body>
+<script>
+    /* window.onscroll = function() {myFunction()};
+     
+     var header = document.getElementById("myHeader");
+     var sticky = header.offsetTop;*/
+     
+     function myFunction() {
+       if (window.pageYOffset > sticky) {
+         header.classList.add("sticky");
+       } else {
+         header.classList.remove("sticky");
+       }
+     }
+
+    //  var n = window.prompt("name?", "Chesca")
+    // window.alert("hello " + n)
+
+ </script> 
+</html>
