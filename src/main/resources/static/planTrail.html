@@ -3,25 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo1.jpg" type="image/gif/jpg">
     <link rel="stylesheet" href="css/planTrail.css">
+    <link rel="stylesheet" href="css/trailSearch.css">
+    <script src="js/trailSearch.js" defer></script>
+    <script src="js/trailSearchList.js" defer></script>
     <title>Planning a Trail</title>
+    <style>
+        body{
+            background-image: url(../img/img1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
-    <div id="optionBar">
-        <button type="button" class="options">Search</button>
-        <button type="button" class="options">Profile</button>
-        <button type="button" class="options">Log Out</button>
-    </div>
-
-    <div id="trailDetails">
-        <div id="userExp">
-            <span>Experiences</span>
-            <button type="button" class="expAdd" onclick="window.location.href='/hikeExp.html'">Add a Review</button>
-            <button type="button" class="expView" onclick="window.location.href='/hikeExp.html'" disabled>View all Reviews</button>
+        <div id="optionBar">
+            <button type="button" id="search" class="options">Search</button>
+                <div class ="search-bar">
+                    <form action="trailSearch" method="post">
+                        <input type="text" class="input" id="input-box" placeholder="search a trail...." >
+                        <button type="submit"> <img src="/img/search.png" alt=""> </button>
+                        <div class="autocom-box">
+                        </div>
+                    </form>
+                </div>
+            <button type="button" class="options">Profile</button>
+                
+            <button type="button" onclick="window.location.href='/LandingPage.html'" class="options">Log Out</button>
         </div>
-        <!--div id="trailPhotos">Photos</div-->
-        <div id="findTrail"></div>
-        
-    </div>
+
+        <div id="trailDisplayInfo">
+            <p id="trailName">[insert Trail Name here]</p><br>
+            <p id="trailLocation">[location]</p>
+
+        </div>
+
+        <div id="trailDetails">
+            <div id="userExp">
+                <span>Experiences</span>
+                <button type="button" class="expAdd" onclick="window.location.href='/hikeExp.html'">Add a Review</button>
+                <button type="button" class="expView" onclick="window.location.href='/hikeExp.html'" disabled>View all Reviews</button>
+            </div>
+            <!--div id="trailPhotos">Photos</div-->
+            <div id="findTrail"></div>
+            
+        </div>
 </body>
 </html>

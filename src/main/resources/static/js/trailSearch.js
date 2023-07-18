@@ -1,7 +1,11 @@
 const searchWrapper = document.querySelector(".search-bar");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
+const searchButton = document.querySelector("#search");
 
+searchButton.addEventListener("click", showSearch);
+
+var searchShow = false;
 
 inputBox.onkeyup = (e)=>{
 
@@ -35,7 +39,20 @@ inputBox.onkeyup = (e)=>{
     
 }
 
+function showSearch(){
+    if (searchShow == false){
+        searchWrapper.classList.add("search-bar-move");
+        searchWrapper.classList.add("search-bar-show");
+        searchShow = true;
+    }
+    else if (searchShow == true){
+        searchWrapper.classList.add("search-bar-hide");
+        searchWrapper.classList.remove("search-bar-move");
+        searchShow = false;
+        searchWrapper.classList.remove("search-bar-show");
+    }
 
+}
 
 function select(element){
     let selectUserData = element.textContent;
