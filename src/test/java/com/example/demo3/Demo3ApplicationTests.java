@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import static com.jayway.jsonpath.JsonPath.*;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.junit.runner.RunWith;
+// import org.junit.runner.RunWith;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
