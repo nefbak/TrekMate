@@ -3,6 +3,6 @@ copy . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/demo3-0.0.1-SNAPSHOT.jar demo3.jar
+COPY --from=build /target/trekmate-0.0.1-SNAPSHOT.jar trekmate.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo3.jar"]
+ENTRYPOINT ["java","-jar","trekmate.jar"]
