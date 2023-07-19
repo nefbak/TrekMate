@@ -31,47 +31,78 @@ public class ReviewsController {
     @Autowired
     private ReviewRepository reviewRepo;
 
-  /*  @GetMapping("/trails/view")
-    public String getAllTrails(Model model){
-        System.out.println("Getting all trails");
-        // TODO: get all students from database
-        List<Review> reviews = reviewRepo.findAll();
-        
-        model.addAttribute("re", reviews);
-        return "users/trailPage";
+
+    @PostMapping("/users/{ud}/review")
+    public String addReview(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
+        String name = newreview.get("name");
+        String location = newreview.get("location");
+        int uid = Integer.parseInt(newreview.get("uiddd"));
+        int tid = Integer.parseInt(newreview.get("tiddd"));
+        model.addAttribute("name", name);
+        model.addAttribute("location", location);
+        model.addAttribute("ud", uid);
+        model.addAttribute("tid", tid);
+        return "users/hikeExp";
     }
 
-    @PostMapping("/users/addTrail")
-    public String addTrail(@RequestParam Map<String, String> newtrail, HttpServletResponse response, Model model, @ModelAttribute("trail") Trail trail){
-        String Name = newtrail.get("trailName");
-        float Lat = Float.parseFloat(newtrail.get("lat"));
-        float Lon = Float.parseFloat(newtrail.get("lon"));
-        String Location = newtrail.get("area");
-        trailRepo.save(new Trail(Name, Lat, Lon, Location));
-        response.setStatus(201);
-         //model.addAttribute("tr", t);
-        //return "redirect:/addTrail.html";
-        return "users/addedTrail";
+    @PostMapping("/users/{ud}/allReviews")
+    public String getAllReviews(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
+        System.out.println("getting reviews");
+        int uid = Integer.parseInt(newreview.get("uiddd"));
+        int tid = Integer.parseInt(newreview.get("tiddd"));
+        String name = newreview.get("name");
+        System.out.println("TEST: " + name);
+        List<Review> reviews = reviewRepo.findByTid(tid);
+        model.addAttribute("reviews", reviews);
+        model.addAttribute("ud", uid);
+        model.addAttribute("tid", tid);
+        model.addAttribute("name", name);
+        return "users/reviewDisplay";
     }
 
-    @GetMapping("/trail/adminView")
-    public String getAdminTrail(Model model){
-        System.out.println("Getting all trails");
-        // TODO: get all students from database
-        List<Trail> trails = trailRepo.findAll();
-        
-        model.addAttribute("tr", trails);
-        return "users/adminTrail";
+    @PostMapping("/users/{ud}/userReviews")
+    public String getAllUserReviews(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
+        System.out.println("getting reviews");
+        int uid = Integer.parseInt(newreview.get("uiddd"));
+        //int tid = Integer.parseInt(newreview.get("tiddd"));
+        //String name = newreview.get("name");
+        //System.out.println("TEST: " + name);
+        List<Review> reviews = reviewRepo.findByUid(uid);
+        model.addAttribute("reviews", reviews);
+        model.addAttribute("ud", uid);
+       // model.addAttribute("tid", tid);
+        //model.addAttribute("name", name);
+        return "users/hikeHistory";
     }
 
-    @PostMapping("/trail/remove")
-    public String removeTrail(Model model, @RequestParam(name = "uidd") int tid, HttpServletResponse response){
+    @PostMapping("/postReview")
+    public String reviewed(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
+        String name = newreview.get("trailName");
+        String location = newreview.get("location");
+        int uid = Integer.parseInt(newreview.get("uiddd"));
+        int tid = Integer.parseInt(newreview.get("tiddd"));
+        String difficulty = newreview.get("difficulty");
+        String date = newreview.get("date");
+        String paragraph = newreview.get("paragraph");
+        reviewRepo.save(new Review(name, date, location, difficulty, paragraph, tid, uid));
+        model.addAttribute("ud", uid);
+        model.addAttribute("tid", tid);
+        model.addAttribute("name", name);
+        return "users/addedReview";
+    }
 
+    @PostMapping("/review/remove")
+    public String removeReview(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
+        int rid = Integer.parseInt(newreview.get("ridd"));
+        int uid = Integer.parseInt(newreview.get("uidd"));
         System.out.println("d");
-        System.out.println("Delete Trail " + tid);
-        Trail t = trailRepo.findByTid(tid).get(0);
-        trailRepo.delete(t); //delete from database
+        System.out.println("Delete Review " + rid);
+        Review r = reviewRepo.findByRid(rid).get(0);
+        reviewRepo.delete(r); //delete from database
+        model.addAttribute("ud", uid);
+        return "users/removedReview";
+    }
 
-        return "users/removedTrail";
-    } */
+    
+
 }

@@ -74,4 +74,50 @@ public class TrailsController {
 
         return "users/removedTrail";
     }
+
+    @PostMapping("users/searched")
+        //public String trailSearched(Model model, @PathVariable(name = "uiddd") String uid, @PathVariable(name = "tr") String name, HttpServletResponse response){
+        public String trailSearched(Model model, @RequestParam Map<String, String> newtrail, HttpServletResponse response){
+
+        String name = newtrail.get("tr");
+        int uid = Integer.parseInt(newtrail.get("uiddd"));
+        if (trailRepo.findByName(name).size() != 0){
+         Trail t = trailRepo.findByName(name).get(0);
+        
+        System.out.println("Trail Repo find: " + t.getName());
+
+        response.setStatus(201);
+        model.addAttribute("ud", uid);
+        model.addAttribute("trail", t);
+        return "users/planTrail";
+        //return "redirect:/userPage.html";
+    }
+
+        model.addAttribute("ud", uid);
+        //return "showUser";
+        return "users/trailSearch";
+    }
+
+    @PostMapping("users/trail")
+        //public String trailSearched(Model model, @PathVariable(name = "uiddd") String uid, @PathVariable(name = "tr") String name, HttpServletResponse response){
+        public String trail(Model model, @RequestParam Map<String, String> newtrail, HttpServletResponse response){
+
+        int tid = Integer.parseInt(newtrail.get("ti"));
+        int uid = Integer.parseInt(newtrail.get("uiddd"));
+        if (trailRepo.findByTid(tid).size() != 0){
+         Trail t = trailRepo.findByTid(tid).get(0);
+        
+        System.out.println("Trail Repo find: " + t.getName());
+
+        response.setStatus(201);
+        model.addAttribute("ud", uid);
+        model.addAttribute("trail", t);
+        return "users/planTrail";
+        //return "redirect:/userPage.html";
+    }
+
+        model.addAttribute("ud", uid);
+        //return "showUser";
+        return "users/trailSearch";
+    }
 }

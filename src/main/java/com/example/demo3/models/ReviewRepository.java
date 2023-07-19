@@ -5,5 +5,7 @@ import java.util.List;
 
 public interface ReviewRepository extends JpaRepository<Review,Integer> {
     List<Review> findByRid(int id);
+    List<Review> findByTid(int id);
+    List<Review> findByUid(int id);
     //List<Review> findByName(String name);
 }

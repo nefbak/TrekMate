@@ -52,9 +52,16 @@ public class UsersController {
         int Age = Integer.parseInt(newuser.get("age"));
         String Location = newuser.get("location");
         String Difficulty = newuser.get("difficulty");
-        User u = userRepo.save(new User(Age, Location, Name, Email, Password, Difficulty) );
+       // User u = userRepo.save(new User(Age, Location, Name, Email, Password, Difficulty) );
+        userRepo.save(new User(Age, Location, Name, Email, Password, Difficulty) );
+        User u = userRepo.findByName(Name).get(0);
+        int userId = u.getUid(); // Retrieve the generated ID
+        u.setUid(userId); 
+        System.out.println("WOAH "+u.getUid());
         response.setStatus(201);
+       // u.setUid(u.getUid());
          model.addAttribute("us", u);
+         model.addAttribute("ud", userId);
         //return "redirect:/userPage.html";
         return "users/userPage";
     }
@@ -87,6 +94,7 @@ public class UsersController {
         if (Password.equals(be)){
             System.out.println("PLEASE");
             model.addAttribute("user", u);
+            model.addAttribute("ud", u.getUid());
             return "users/userPage";
         }
         response.setStatus(201);
@@ -119,6 +127,7 @@ public class UsersController {
         User u = userRepo.findById(id).get();
 
         model.addAttribute("user", u);
+        model.addAttribute("ud", u.getUid());
         return "users/userPage";
     }
 
@@ -272,5 +281,21 @@ public class UsersController {
 
         return "users/edited";
     } 
+
+    @PostMapping("users/trailS/{uid}")
+        public String trailSearch(Model model, @PathVariable(name = "uid") int uid, HttpServletResponse response){
+        //List<Student> student = studentRepo.findByUid(uid);
+        System.out.println("s");
+        System.out.println("Get UID STRING " + uid);
+        //int id = Integer.parseInt(uid);
+        System.out.println("Get User " + uid);
+        User u = userRepo.findById(uid).get();
+        System.out.println("HELLO" + u.getName());
+
+        model.addAttribute("user", u);
+        model.addAttribute("ud", uid);
+        //return "showUser";
+        return "users/trailSearch";
+    }
 
 }

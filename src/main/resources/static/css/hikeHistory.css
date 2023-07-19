@@ -1,0 +1,154 @@
+.title{
+    color: #345822;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.header {
+    padding: 10px 16px;
+    background: #ffffff;
+    color: #345822;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  .content {
+    padding: 16px;
+  }
+
+  #title {
+    margin-top: 10px;
+  }
+
+  #logout {
+    padding: 10px 16px;
+    background: #61A43D;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    float: right;
+    text-align: right;
+    width: 70px;
+    height: 35px;
+    font-size: 10pt;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+  
+  .sticky + .content {
+    padding-top: 102px;
+  }
+
+.table{
+  text-align: center;
+  /* width: 90%; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tableHeaders{
+  font-size:x-large;
+  color: #345822;
+}
+
+#sections{
+  font-size: larger;
+  color: #61A43D;
+  font-weight: 500;
+}
+
+/* Review pop up */
+
+.revButton{
+  background-color: #61A43D;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+.revPopup{
+  padding: 1em;
+  max-width: 50ch;
+  text-align: center;
+  background-color: #f8dda4;
+  border-color: #c49145;
+}
+
+.revPopup h2{
+  color: #61A43D;
+}
+
+.closeRev{
+  background-color: #61A43D;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+/* delete Popup */
+.deleteButton{
+  background-color: #f44336; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+.deletePopup{
+  padding: 1em;
+  max-width: 50ch;
+  text-align: center;
+  background-color: #f8dda4;
+  border-color: #c49145;
+}
+
+.closeDelete{
+  background-color: whitesmoke; 
+  border: none;
+  /* color: white; */
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+.deleteHike{
+  background-color: #f44336; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+.buttons {
+  width: 200px;
+  margin: 0 auto;
+  display: inline;
+  padding-top: 10px;
+}
