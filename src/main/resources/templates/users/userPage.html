@@ -68,39 +68,13 @@
            }
          }
      </script> 
-   <!--  <div class="header" id="myHeader">
-      <style>
-                        
-                        
-        #but {
-          border: 10px solid #dddddd;
-          text-align: left;
-          padding: 10px;
-          width: 10px;
-        }
-        </style>
-      <table style="border-spacing: 10px;">
-        <h2 id="name"><img src="/img/logo1.jpg" alt="TrekMate" style="width:60px;height:50px;">
-          <tr id="but"> <a href="../../LandingPage.html"><button id="logout" style = "background: #61A43D" class= "btn btn-primary">Logout</button></a></tr>
-
-          <form th:action="'/users/trailS/'+${ud}" method="post">
-            <input type="hidden" name="uiddd" th:value="${ud}"/>
-            <tr id="but">
-            <button class="btn btn-success"  type="submit" style="text-align: center;">search</button>
-          </tr>
-          </form> 
-        </h2>
-
-          
-        </table> 
-        
-    </div> -->
+ 
 
     <main>
          
       <div class="pictures">
         
-        <!-- templating for picture? -->
+       
         <img src="/img/profilePic.png" alt="Profile picture" class="pfp">
       </div>
       <br >
@@ -108,29 +82,29 @@
 
       <p th:each="user:${us}" class="allText">
        <div th:text="${user.name}" class="name"></div>
-       <!-- <div class="name" >Scooby</div> -->
+    
        <hr id="line">
        <br>
  
        
        <div id="attributes">Email: </div>
        <div th:text="${user.email}" id="userInfo"></div>
-       <!-- <div id="userInfo">scooby.doo@gmail.com</div> -->
+
        <br>
        <div id="attributes">Age: </div>
 
        <div th:text="${user.age}" id="userInfo"></div>
-       <!-- <div id="userInfo">21</div> -->
+   
             
        <br>
        <div id="attributes" >Experience: </div>
 
        <div th:text="${user.difficulty}" id="userInfo"></div>
-       <!-- <div id="userInfo">Novice</div> -->
+   
        <br>
        <div id="attributes">Location: </div>
        <div  th:text="${user.location}" id="userInfo"></div>
-       <!-- <div id="userInfo">Port Coquitlam, BC</div> -->
+    
       </p>
               <tr>
                 <center>
@@ -152,38 +126,14 @@
             </tbody>
           
           <br>
-          <!--<form th:action="'/users/edit/'+${user.uid}" method="get" class="text-center"> 
-          <form th:action="@{/users/edit/{uid}(uid=${user.uid})}" th:object="${user}" method="get">
-            <input type="hidden" name="uiddd" th:value="${user.uid}"/>
-            <button class="btn btn-success"  type="submit" >Edit Profile</button>
-          </form> 
-
-          <button class="btn btn-success"  type="submit"> <a id="edit" th:href="@{/users/edit/{uid}(uid=${user.uid})}">Edit</a></button> -->
+        
           
           </table> 
         </p>
-        <!-- favorite list + hike history (future iteration) -->
-        <!-- <p>
-            <div class="favList">
-                <a href="#" class="Ftitle"> Favorites </a>
-                <a href="#"> Location 1 </a>
-                <a href="#"> Location 2 </a>
-                <a href="#"> Location 3 </a>
-                <a href="#"> Location 4 </a>
-                <a href="#"> Location 5 </a>
-            </div>
+     
             
             
 
-            <div class="hikeHist">
-                <a href="#" class="Htitle"> Hike History </a>
-                <a href="#"> Location 1 </a>
-                <a href="#"> Location 2 </a>
-                <a href="#"> Location 3 </a>
-                <a href="#"> Location 4 </a>
-                <a href="#"> Location 5 </a>
-            </div>
-        </p> -->
         
     </main> 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

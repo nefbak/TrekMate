@@ -14,6 +14,8 @@ img {
     top: -30px;
 }
 body {
+    position: relative;
+    background-image: url("../img/img4.jpg");
     font-family: "Sora", sans-serif;
     line-height: 1.7;
     color: var(--body);

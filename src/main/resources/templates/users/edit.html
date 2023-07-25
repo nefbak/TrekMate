@@ -56,13 +56,7 @@
             <center>
                 <img src="/img/stairs.png" alt="name" style="width:30px;height:30px;">
             <label for="difficulty">Choose a Difficulty/Experience Level:</label>
-           <!-- <select type="number" id="difficulty" name="difficulty" class="form-control-lg"
-            placeholder="">
-                <option th:value="${user.diffulty}" th:text="${user.difficulty}"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select> -->
+           
             <input type="range" th:value="${user.difficulty}" name="difficulty" min="1" max="10">
             </center>
         </div>
@@ -80,7 +74,7 @@
                 th:value="${user.age}" placeholder="Age">
             </center>
         </div>
-        <!-- Submit Button -->
+      
         <input type="hidden" name="idddd" th:value="${user.uid}" />
 
         <input type="hidden" name="password" th:value="${user.password}" />

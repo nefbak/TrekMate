@@ -37,9 +37,9 @@
       </div>
     </head>
 <body>
-    <!--<span th:text="${user.name}"></span> -->
+
     <center style = 'margin-top: 20px;' id = 'rem'>User Successfully Edited</center>
-    <!--<center style = 'font-weight: bold;'><a href="../../../students/view">Return to User Page</a></center> -->
+  
     <center>
     <form th:action="'/users/'+${user.uid}" method="post">
         <input type="hidden" name="uiddd" th:value="${user.uid}"/>
@@ -47,10 +47,7 @@
       </form> 
     </center>
     <script>
-        /* window.onscroll = function() {myFunction()};
-         
-         var header = document.getElementById("myHeader");
-         var sticky = header.offsetTop;*/
+       
          
          function myFunction() {
            if (window.pageYOffset > sticky) {
