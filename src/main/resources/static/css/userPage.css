@@ -4,8 +4,19 @@
 
 main {
     margin-top: 50px;
+    
 }
 
+.navbar img{
+
+  position: absolute;
+  left: 19px;
+  top: 10px;
+}
+
+.navbar ul{
+  padding-top: 20px;
+}
 #but {
     border: 10px solid #dddddd;
     text-align: left;
@@ -139,29 +150,4 @@ table{
     padding-top: 10px;
   }
 
-/* FAVEORITE LIST */
-/* .favList{
-    width: 200px;
-    height: 150px;
-    overflow-y: auto;
-    display: inline-block;
-}
-
-.favList a{
-    background-color:#eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-}
-
-.favList a:hover{
-    background-color: #ccc;
-
-}
-
-.favList a.Ftitle{
-    background-color: #61A43D;
-    color: white;
-} */
 
