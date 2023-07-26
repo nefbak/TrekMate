@@ -83,14 +83,22 @@
                                 <th>Name</th>
                                 <th>ID</th>
                                 <th> </th>
+                                <th> </th>
                               </tr>
                               <tr>
                                 <td th:text="${user.name}"></td>
                                 <td th:text="${user.uid}"></td>
+                                <td> 
+                                    <form action="/user/admin/profile" method="post">
+                                        <input type="hidden" name="uiddd" th:value="${user.uid}" />
+                                        <button style = "background: #61A43D" class= "btn btn-primary" type="submit">VIEW USER INFO</button> 
+                            
+                                     </form>
+                                </td>
                                 <td>
                                     <form action="/user/remove" method="post">
                                         <input type="hidden" name="uidd" th:value="${user.uid}" />
-                                        <button style = "background: #61A43D" class= "btn btn-primary" type="submit">DELETE USER</button> 
+                                        <button style = "background: #c11a1a" class= "btn btn-primary" type="submit">DELETE USER</button> 
                                 
                                     </form>
                                 </td>
