@@ -1,0 +1,128 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#optionBar{
+    width: 50%;
+    height: 50px;
+    background-color: #61a43d;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.options{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #61a43d;
+    color: white;
+    cursor: pointer;
+    margin-top: 8px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.options:hover{
+    background-color: #345822;
+}
+
+#trailDisplayInfo{
+    width: 40%;
+    height: 100px;
+    background-color: #ffffff;
+    opacity: 0.8;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+#trailName{
+    font-size: 25pt;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#trailLocation{
+    font-size: 15pt;
+    text-align: center;
+}
+
+
+#trailDetails{
+    margin:auto;
+    margin-top: 50px;
+    width: 90%;
+    height: 800px;
+    background-color: #ffffff;
+    color: #373737;
+    opacity: 80%;
+    margin-bottom: 200px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: -10;
+}
+
+#trailPhotos, #findTrail, #userExp{
+    position: relative;
+    border-color: #61a43d;
+    border-style: solid;
+}
+
+#trailPhotos{
+    float:left;
+    width: 30%;
+    height: 370px;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+#findTrail{
+    float: right;
+    width: 66.5%;
+    height: 800px;
+    z-index: -1;
+}
+
+#userExp{
+    position: relative;
+    float: left;
+    width: 30%;
+    height: 370px;
+    padding: 10px;
+    /*margin-top: 15px;*/
+}
+
+.expAdd, .expView{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #61a43d;
+    color: white;
+    cursor: pointer;
+    margin-top: 8px;
+    padding: 10px;
+    margin: 20px;
+    position: absolute;
+    bottom: 0;
+}
+
+.expAdd{
+    right: 10px;
+}
+
+.expView{
+    left: 10px;
+}
+
+.expAdd:hover, .expView:hover{
+    background-color: #345822;
+}
+
+#map{
+    height: 800px;
+    width: 66.5%;
+    z-index: 10;
+   }

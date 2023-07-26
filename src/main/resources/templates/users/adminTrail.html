@@ -38,9 +38,9 @@
                             <!-- </form>-->
                         </tr>
                         <tr>
-                            <form action="/trail/adminView" method="get">
+                            <form action="/user/adminView" method="get">
                                 <!--<input type="hidden" name="uidd" th:value="${user.uid}" />-->
-                                <button id="trail" style = "background: #61A43D" class= "btn btn-primary" type="submit">Trail Admin Page</button> 
+                                <button id="trail" style = "background: #61A43D" class= "btn btn-primary" type="submit">User Admin Page</button> 
                           
                                 </form>
                         </tr>
@@ -70,7 +70,7 @@
                 <center><h1>ADMIN VIEW</h1></center>
                 <center>Delete users</center>
                 <table>
-                    <li th:each="user:${us}" style='list-style-type: none' name="" >
+                    <li th:each="trail:${tr}" style='list-style-type: none' name="" >
                         <style>
                             span{
                                 display: inline-block;
@@ -85,12 +85,12 @@
                                 <th> </th>
                               </tr>
                               <tr>
-                                <td th:text="${user.name}"></td>
-                                <td th:text="${user.uid}"></td>
+                                <td th:text="${trail.name}"></td>
+                                <td th:text="${trail.tid}"></td>
                                 <td>
-                                    <form action="/user/remove" method="post">
-                                        <input type="hidden" name="uidd" th:value="${user.uid}" />
-                                        <button style = "background: #61A43D" class= "btn btn-primary" type="submit">DELETE USER</button> 
+                                    <form action="/trail/remove" method="post">
+                                        <input type="hidden" name="uidd" th:value="${trail.tid}" />
+                                        <button style = "background: #61A43D" class= "btn btn-primary" type="submit">DELETE TRAIL</button> 
                                 
                                     </form>
                                 </td>

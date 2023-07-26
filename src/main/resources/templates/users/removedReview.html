@@ -9,16 +9,16 @@
     <title>Removed</title>
     <div class="header" id="myHeader">
         
-   
+        
         
     </div>
 </head>
 <body>
-    <center style = 'margin-top: 20px;' id = 'rem'>Trail Successfully Removed From Database</center>
+    <center style = 'margin-top: 20px;' id = 'rem'>Review Successfully Removed From Database</center>
     <center style = 'font-weight: bold;'>
-      <form action="/user/adminView" method="get">
-      <!--<input type="hidden" name="uidd" th:value="${user.uid}" />-->
-      <button style = "background: #61A43D" class= "btn btn-primary" type="submit">Return to Admin Page</button> 
+      <form th:action="'/users/'+${ud}+'/userReviews'" method="post">
+      <input type="hidden" name="uiddd" th:value="${ud}" />
+      <button style = "background: #61A43D" class= "btn btn-primary" type="submit">Return to User Hike History Page</button> 
 
       </form>
     </center>
