@@ -41,40 +41,81 @@ public class UsersController {
         return "users/showAll";
     }
 
+    @GetMapping("/register")
+    public String register(Model model){
+        return "users/register";
+    }
+
 
 
     //@PostMapping("/signup")
     @PostMapping("/signup")
     public String addUser(@RequestParam Map<String, String> newuser, HttpServletResponse response, Model model, @ModelAttribute("user") User user){
+        System.out.println("PLEASE");
+        
         String Name = newuser.get("name");
         String Password = newuser.get("password");
         String Email = newuser.get("email");
-        int Age = Integer.parseInt(newuser.get("age"));
         String Location = newuser.get("location");
         String Difficulty = newuser.get("difficulty");
-       // User u = userRepo.save(new User(Age, Location, Name, Email, Password, Difficulty) );
-        userRepo.save(new User(Age, Location, Name, Email, Password, Difficulty) );
-        User u = userRepo.findByName(Name).get(0);
-        int userId = u.getUid(); // Retrieve the generated ID
-        u.setUid(userId); 
-        System.out.println("WOAH "+u.getUid());
-        response.setStatus(201);
-       // u.setUid(u.getUid());
-         model.addAttribute("us", u);
-         model.addAttribute("ud", userId);
-        //return "redirect:/userPage.html";
-        return "users/userPage";
+        String Age = newuser.get("age");
+        System.out.println("EMAIL LENGTH: " + Email.length());
+        System.out.println("Age LENGTH: " + newuser.get("age").length());
+
+        if (Age.length()==0){
+            System.out.println("OKAY");
+            return "users/register";
+        }
+
+       /* if (Age.length()==1){
+            System.out.println("AYA");
+            return "users/register";
+        }*/
+
+        if ("".equals(Age)){
+            System.out.println("YES");
+            return "users/register";
+        }
+
+        if (Email.length() == 0 || Name.length()==0 || Password.length() == 0 || Location.length() == 0 || Age.length() == 0 || Difficulty.length() == 0) {
+            model.addAttribute("error", "Error: Please don't leave name, password, or email blank");
+            System.out.println("What");
+            return "users/register";
+            
+        }
+        System.out.println("HUH");
+        if (userRepo.findByEmail(Email).size() == 0 && !Email.equals("admin@gmail.com")){
+            
+            int newAge = Integer.parseInt(Age);
+
+        // User u = userRepo.save(new User(Age, Location, Name, Email, Password, Difficulty) );
+            userRepo.save(new User(newAge, Location, Name, Email, Password, Difficulty) );
+            User u = userRepo.findByName(Name).get(0);
+            int userId = u.getUid(); // Retrieve the generated ID
+            u.setUid(userId); 
+            System.out.println("WOAH "+u.getUid());
+            response.setStatus(201);
+        // u.setUid(u.getUid());
+            model.addAttribute("us", u);
+            model.addAttribute("ud", userId);
+            //return "redirect:/userPage.html";
+            return "users/userPage";
+        }
+        System.out.println("Hi");
+        model.addAttribute("error", "Error: email is already in use");
+        return "users/register";
     }
 
     @PostMapping("/login")
     public String login(@RequestParam Map<String, String> newuser, HttpServletResponse response, Model model, @ModelAttribute("user") User user){
-        String Name = newuser.get("name");
+       // String Name = newuser.get("name");
+        String Email = newuser.get("email");
         String Password = newuser.get("password");
-        System.out.println("Name "+Name);
+        //System.out.println("Name "+Name);
         System.out.println("Pass: "+Password);
-        System.out.println("Findbyname: "+userRepo.findByName(Name).size());
+        //System.out.println("Findbyname: "+userRepo.findByName(Name).size());
         
-        String adName= "admin";
+        /*String adName= "admin";
         String adPass = "admin";
 
         if (Password.equals(adPass) && Name.equals(adName)){
@@ -101,7 +142,44 @@ public class UsersController {
         model.addAttribute("us", u);
         //return "redirect:/userPage.html";
     }
-        return "redirect:/welcome.html";
+        return "redirect:/welcome.html"; */
+
+        String adEmail= "admin@gmail.com";
+        String adPass = "admin";
+
+        if (Password.equals(adPass) && Email.equals(adEmail)){
+            List<User> users = userRepo.findAll();
+        
+            model.addAttribute("us", users);
+            return "users/admin";
+        }
+
+        if (userRepo.findByEmail(Email).size() != 0){
+         User u = userRepo.findByEmail(Email).get(0);
+        
+        System.out.println("User Repo find: " + u.getEmail());
+        System.out.println("HI " + u.getPassword());
+        String be = u.getPassword();
+
+        if (Password.equals(be)){
+            System.out.println("PLEASE");
+            model.addAttribute("user", u);
+            model.addAttribute("ud", u.getUid());
+            return "users/userPage";
+        }
+        response.setStatus(201);
+        model.addAttribute("us", u);
+        //return "redirect:/userPage.html";
+    }
+        return "redirect:/welcome.html"; 
+    }
+
+    @GetMapping("/users/viewAdmin")
+    public String getAllUsersAdmin(Model model){
+        System.out.println("getting users");
+        List<User> users = userRepo.findAll();
+        model.addAttribute("us", users);
+        return "users/admin";
     }
     
 
@@ -129,6 +207,42 @@ public class UsersController {
         model.addAttribute("user", u);
         model.addAttribute("ud", u.getUid());
         return "users/userPage";
+    }
+
+    @PostMapping("/users/{uid}/other")
+    public String viewUserOther(Model model, @RequestParam Map<String, String> newuser, HttpServletResponse response){
+        String uid = newuser.get("uiddd");
+        String uog = newuser.get("uog");
+        String tid = newuser.get("ti");
+        System.out.println("s");
+        //System.out.println("Get User " + uid);
+        int id = Integer.parseInt(uid);
+        int idog = Integer.parseInt(uog);
+         if (userRepo.findByUid(id).size() != 0){
+            User u = userRepo.findById(id).get();
+
+            model.addAttribute("user", u);
+            model.addAttribute("ud", u.getUid());
+            model.addAttribute("uOg", idog);
+            return "users/userPageOther";
+         }
+
+         model.addAttribute("ud", uog);
+         model.addAttribute("tid", tid);
+         return "users/userPageNotFound";
+    }
+    
+    @PostMapping("/user/admin/profile")
+    public String viewUserAdmin(Model model, @RequestParam(name = "uiddd") String uid, HttpServletResponse response){
+
+        System.out.println("s");
+        System.out.println("Get User " + uid);
+        int id = Integer.parseInt(uid);
+        User u = userRepo.findById(id).get();
+
+        model.addAttribute("user", u);
+        model.addAttribute("ud", u.getUid());
+        return "users/userPageAdmin";
     }
 
 
@@ -176,7 +290,7 @@ public class UsersController {
     }
 
     @PostMapping("/user/remove")
-    public String removeStudent(Model model, @RequestParam(name = "uidd") int uid, HttpServletResponse response){
+    public String removeUser(Model model, @RequestParam(name = "uidd") int uid, HttpServletResponse response){
 
         System.out.println("d");
         System.out.println("Delete User " + uid);
