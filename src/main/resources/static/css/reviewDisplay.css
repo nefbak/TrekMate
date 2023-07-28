@@ -3,7 +3,7 @@ img {
     clip-path: circle();
 }
 :root {
-    --primary: #219c50;
+    --primary: #1b58c9;
     --dark: #174b22;
     --body: #063500;
     --white: #ffffff;
@@ -41,12 +41,24 @@ img {
     z-index: 1;
 }
 #features {
-    padding-top: 80px;
+    padding-top: 0px;
     padding-bottom: 50px;
     padding-left: 40px;
     padding-right: 40px;
     z-index: 1;
 }
+.leaveButton{
+    background-color: #267cee; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
 
 .card-effect {
     box-shadow: var(--box-shadow);
