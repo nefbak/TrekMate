@@ -89,13 +89,14 @@
         <!-- templating for picture? -->
         <img src="/img/profilePic.png" alt="Profile picture" class="pfp">
       </div>
-      <br >
+      <!-- <br > -->
       
 
       <p th:each="user:${us}" class="allText">
        <div th:text="${user.name}" class="name"></div>
        <!-- <div class="name" >Scooby</div> -->
-       <hr id="line">
+       <!-- <hr id="line"> -->
+       <br>
        <br>
  
        
@@ -117,8 +118,10 @@
        <div id="attributes">Location: </div>
        <div  th:text="${user.location}" id="userInfo"></div>
        <!-- <div id="userInfo">Port Coquitlam, BC</div> -->
+       <br>
+       <br>
       </p>
-              <tr>
+              <tr id="allButtons">
                 <center>
                 <form th:action="'/users/edit/'+${ud}" method="post">
                   <input type="hidden" name="uiddd" th:value="${ud}"/>
@@ -127,11 +130,11 @@
               </center>
               </tr>
               <br>
-              <tr>
+              <tr id="allButtons">
                 <center>
-                <form th:action="'/users/'+${ud}+'/userReviews'" method="post" id="userButtons">
+                <form th:action="'/users/'+${ud}+'/userReviews'" method="post" id="insideButton">
                   <input type="hidden" name = "uiddd" th:value="${ud}">
-                  <button class="btn btn-success btn-lg" type="submit" style="text-align: center;">Hike History</button>
+                  <button class="btn btn-success " type="submit" style="text-align: center;">Hike History</button>
                 </form>
                </center>
               </tr> 

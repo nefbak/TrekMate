@@ -73,6 +73,7 @@ table{
     font-size: 50px;
     text-align: center;
     font-weight: 500;
+    /* float: right; */
 }
 
 .allText{
@@ -82,7 +83,7 @@ table{
 #userInfo{
     color: #61A43D;
     font-size: 25px;
-    padding-right: 25%;
+    padding-right: 10%;
     text-align:right;
 }
 
@@ -90,7 +91,7 @@ table{
     color: #345822;
     float: left;
     font-size: 25px;
-   padding-left: 25%;
+   padding-left: 10%;
 }
 
 
@@ -100,11 +101,13 @@ table{
 
 .pictures{
   
-  text-align: center;
+  /* text-align: center; */
+  float: left;
+  padding-left: 100px;
 }
 
 .pfp{
-  width: 300px;
+  width: 350px;
   height: auto;
 }
 
@@ -116,14 +119,15 @@ table{
 
 }
 
-#userButtons{
+#insideButton{
   text-align: center;
   display:inline-block;
 }
 
-.allButtons{
-  text-align: center;
-  padding-bottom: 40px;
+#allButtons{
+  /* text-align: center;
+  padding-bottom: 40px; */
+  float: left;
 }
 
 #icons{
@@ -139,29 +143,4 @@ table{
     padding-top: 10px;
   }
 
-/* FAVEORITE LIST */
-/* .favList{
-    width: 200px;
-    height: 150px;
-    overflow-y: auto;
-    display: inline-block;
-}
-
-.favList a{
-    background-color:#eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-}
-
-.favList a:hover{
-    background-color: #ccc;
-
-}
-
-.favList a.Ftitle{
-    background-color: #61A43D;
-    color: white;
-} */
 
