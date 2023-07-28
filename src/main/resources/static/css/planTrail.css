@@ -7,6 +7,7 @@ body{
     height: 50px;
     background-color: #61a43d;
     margin: auto;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +21,6 @@ body{
     background-color: #61a43d;
     color: white;
     cursor: pointer;
-    margin-top: 8px;
     padding: 10px;
     margin: 20px;
 }
@@ -50,7 +50,6 @@ body{
     text-align: center;
 }
 
-
 #trailDetails{
     margin:auto;
     margin-top: 50px;
@@ -58,17 +57,17 @@ body{
     height: 800px;
     background-color: #ffffff;
     color: #373737;
-    opacity: 80%;
+    opacity: 95%;
     margin-bottom: 200px;
     border-radius: 10px;
-    position: absolute;
-    z-index: -10;
 }
+
 
 #trailPhotos, #findTrail, #userExp{
     position: relative;
     border-color: #61a43d;
     border-style: solid;
+    border-radius: 10px;
 }
 
 #trailPhotos{
@@ -77,13 +76,13 @@ body{
     height: 370px;
     padding: 10px;
     margin-right: 5px;
+    margin-top: 60px;
 }
 
 #findTrail{
     float: right;
     width: 66.5%;
     height: 800px;
-    z-index: -1;
 }
 
 #userExp{
@@ -92,7 +91,6 @@ body{
     width: 30%;
     height: 370px;
     padding: 10px;
-    /*margin-top: 15px;*/
 }
 
 .expAdd, .expView{
@@ -122,7 +120,9 @@ body{
 }
 
 #map{
+    float: left;
     height: 800px;
     width: 66.5%;
     z-index: 10;
+    border-radius: 10px;
    }

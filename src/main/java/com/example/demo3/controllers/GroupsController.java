@@ -2,10 +2,12 @@ package com.example.demo3.controllers;
 
 import java.util.List;
 import java.util.Map;
+
 import java.security.Provider.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,33 +18,47 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.example.demo3.models.Group;
+import com.example.demo3.models.GroupRepository;
 import com.example.demo3.models.Review;
-import com.example.demo3.models.ReviewRepository;
 import com.example.demo3.models.User;
 
 import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
-public class ReviewsController {
+public class GroupsController {
     
     @Autowired
-    private ReviewRepository reviewRepo;
+    private GroupRepository groupRepo;
 
 
-    @PostMapping("/users/{ud}/review")
-    public String addReview(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
-        String name = newreview.get("name");
-        String location = newreview.get("location");
-        int uid = Integer.parseInt(newreview.get("uiddd"));
-        int tid = Integer.parseInt(newreview.get("tiddd"));
-        model.addAttribute("name", name);
-        model.addAttribute("location", location);
-        model.addAttribute("ud", uid);
-        model.addAttribute("tid", tid);
-        return "users/hikeExp";
+    @PostMapping("/users/{ud}/group")
+    public String addGroup(@RequestParam Map<String, String> newgroup, HttpServletResponse response, Model model, @ModelAttribute("group") Group group){
+        
+        int size = Integer.parseInt(newgroup.get("size"));
+
+        if (size < 1) {
+            String trailName = newgroup.get("trailName");
+            String name = newgroup.get("name");
+            String location = newgroup.get("location");
+            String date = newgroup.get("date");
+            int tid = Integer.parseInt(newgroup.get("tiddd"));
+            int uid = Integer.parseInt(newgroup.get("uiddd"));
+            String difficulty = newgroup.get("difficulty");
+            //int[] uids = new int[size];
+            List<Integer> uids = new ArrayList<>();
+            uids.add(uid);
+            groupRepo.save(new Group(uids, date, name, location, trailName, difficulty, tid, size));
+            model.addAttribute("ud", uid);
+            model.addAttribute("tid", tid);
+            model.addAttribute("name", name);
+            return "users/addedGroup";
+        }
+        return "users/groupPage";
     }
 
-    @PostMapping("/users/{ud}/allReviews")
+    /*@PostMapping("/users/{ud}/allReviews")
     public String getAllReviews(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
         System.out.println("getting reviews");
         int uid = Integer.parseInt(newreview.get("uiddd"));
@@ -70,23 +86,6 @@ public class ReviewsController {
        // model.addAttribute("tid", tid);
         //model.addAttribute("name", name);
         return "users/hikeHistory";
-    }
-
-    @PostMapping("/users/{ud}/userReviewsGuest")
-    public String getAllUserReviewsOther(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
-        System.out.println("getting reviews");
-        int uid = Integer.parseInt(newreview.get("uiddd"));
-        int uOg = Integer.parseInt(newreview.get("uog"));
-        //int tid = Integer.parseInt(newreview.get("tiddd"));
-        //String name = newreview.get("name");
-        //System.out.println("TEST: " + name);
-        List<Review> reviews = reviewRepo.findByUid(uid);
-        model.addAttribute("reviews", reviews);
-        model.addAttribute("ud", uid);
-        model.addAttribute("uog", uOg);
-       // model.addAttribute("tid", tid);
-        //model.addAttribute("name", name);
-        return "users/hikeHistoryOther";
     }
 
     @PostMapping("/users/{ud}/userReviewsAdmin")
@@ -142,7 +141,7 @@ public class ReviewsController {
         reviewRepo.delete(r); //delete from database
         model.addAttribute("ud", uid);
         return "users/removedReviewAdmin";
-    }
+    } */
 
     
 

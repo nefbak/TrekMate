@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div th:each="photo:${gal}">
+        <p th:text="${photo.filename}"></p>
+        <img th:src="'/upload-dir/'+${photo.filename}" alt="no images"><br>
+    </div>
+</body>
+</html>

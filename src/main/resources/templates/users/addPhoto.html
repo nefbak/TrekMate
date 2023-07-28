@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div th:if="${message}">
+		<h2 th:text="${message}">
+	</div>
+
+	<div>
+		<form th:action="'/users/'+${ud}+'/addingPhoto'" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="uiddd" th:value="${ud}"/>
+			<input type="hidden" name="tiddd" th:value="${td}"/>
+			<p text="this says something"> this shows</p><br>
+			<p th:text="${ud}"></p><br>
+			<p th:text="${td}"></p><br>
+			<p th:text="${filename}"></p>
+			<span>File to upload:</span>
+			<input type="file" name="file" accept="image/*" />
+			<input type="submit" value="Upload" />
+		</form>
+	</div>
+
+	<div>
+		<ul>
+			<li th:each="file : ${files}">
+				<a th:href="${file}" th:text="${file}">
+				
+			</li>
+		</ul>
+			<!--img th:src="/@{${photo.photosImagePath}}" /-->
+				<img th:src="'/upload-dir/'+${filename}" alt="no img"><br>
+				<span>you see me here</span>
+	</div>
+
+</body>
+</html>

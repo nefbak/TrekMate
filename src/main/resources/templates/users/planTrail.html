@@ -9,17 +9,15 @@
     <script src="/js/trailSearch.js" defer></script>
     <script src="/js/trailSearchList.js" defer></script>
     <title>Planning a Trail</title>
-
+    <style>
+        body{
+            background-image: url(../img/img1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
-   <!-- <div id="optionBar">
-        <button type="button" class="options">Search</button>
-        <form th:action="'/users/'+${ud}" method="post">
-            <input type="hidden" name="uiddd" th:value="${ud}"/>
-            <a href=""><button class="options"  type="submit" >Profile</button></a> 
-        </form> 
-        <a href="../../LandingPage.html"><button id="logout" style = "background: #61A43D" class= "options">Logout</button></a>
-    </div> -->
 
     <div id="optionBar">
         <button type="button" id="search" class="options">Search</button>
@@ -34,7 +32,7 @@
             </div>
         <form th:action="'/users/'+${ud}" method="post">
             <input type="hidden" name="uiddd" th:value="${ud}"/>
-            <a href=""><button class="options"  type="submit" >Profile</button></a> 
+            <a href=""><button class="options" type="submit" >Profile</button></a> 
         </form> 
 
         <button type="button" onclick="window.location.href='/LandingPage.html'" class="options">Log Out</button>
@@ -48,23 +46,6 @@
 
 
     <div id="trailDetails">
-        <div id="userExp">
-            <span>Experiences</span>
-            <form th:action="'/users/'+${ud}+'/review'" method="post">
-                <input type="hidden" name="uiddd" th:value="${ud}"/>
-                <input type="hidden" name="tiddd" th:value="${trail.tid}"/>
-                <input type="hidden" name="name" th:value="${trail.name}"/>
-                <input type="hidden" name="location" th:value="${trail.location}"/>
-                <a href=""><button class="expAdd" type="submit" >Add a Review</button></a> 
-            </form> 
-            <form th:action="'/users/'+${ud}+'/allReviews'" method="post">
-                <input type="hidden" name="uiddd" th:value="${ud}"/>
-                <input type="hidden" name="tiddd" th:value="${trail.tid}"/>
-                <input type="hidden" name="name" th:value="${trail.name}"/>
-                <a href=""><button class="expView" type="submit" >View All Reviews</button></a> 
-            </form> 
-        </div>
-        <!--div id="trailPhotos">Photos</div-->
         <div id="findTrail">
             <style>
                 #map{
@@ -107,6 +88,38 @@
             </script>
             </span>
         </div>
+        
+        <div id="userExp">
+            <span>Experiences</span>
+            <form th:action="'/users/'+${ud}+'/review'" method="post">
+                <input type="hidden" name="uiddd" th:value="${ud}"/>
+                <input type="hidden" name="tiddd" th:value="${trail.tid}"/>
+                <input type="hidden" name="name" th:value="${trail.name}"/>
+                <input type="hidden" name="location" th:value="${trail.location}"/>
+                <button class="expAdd" type="submit" >Add a Review</button></a> 
+            </form> 
+            <form th:action="'/users/'+${ud}+'/allReviews'" method="post">
+                <input type="hidden" name="uiddd" th:value="${ud}"/>
+                <input type="hidden" name="tiddd" th:value="${trail.tid}"/>
+                <input type="hidden" name="name" th:value="${trail.name}"/>
+                <button class="expView" type="submit" >View All Reviews</button></a> 
+            </form> 
+        </div>
+        
+        <div id="trailPhotos">
+
+            <span>Photos</span>
+            <form th:action="'/users/'+${ud}+'/addPhoto'" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="uiddd" th:value="${ud}"/>
+                <input type="hidden" name="tiddd" th:value="${trail.tid}"/>
+                <button id="photoAdd" type="submit">Add a Photo</button>
+            </form>
+        </div>
+        
+        
+        
+        
+        
         
     </div>
 </body>

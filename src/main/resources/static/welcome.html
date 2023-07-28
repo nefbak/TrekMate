@@ -25,13 +25,16 @@
     <div id="boxLogin">
         <div class="buttons">
             <button type="button" class="loginButton">Login</button><br>
-            <button type="button" onclick="window.location.href='/register.html'" class="registerButton">Register</button>
+            <form action="/register" method="get">
+             <button type="submit" class="registerButton">Register</button>
+          
+             </form>
         </div>
 
         <div class="login-form">
             <div class="userLogin">
                 <form class="userLogin" action="login" method="post">
-                    <input type="text" class="userElement" name="name" autocomplete="username" placeholder="Name">
+                    <input type="email" class="userElement" name="email" autocomplete="email" placeholder="Email">
                     <input type="password" class="userElement" name="password" autocomplete="current-password" placeholder="Password">
                     <button type="submit" class="small_login">Login</button>
                     <button type="button" class="return">Go back</button>
