@@ -18,7 +18,7 @@
                       
                       
                       #but {
-                        border: 10px solid #dddddd;
+                        border: 20px solid #dddddd;
                         text-align: left;
                         padding: 10px;
                         width: 10px;
@@ -26,12 +26,12 @@
                       </style>
 
                   <table style="border-spacing: 10px;">
-                      <tr id="but"> <a href="../../LandingPage.html"><button id="logout" style = "background: #61A43D" class= "btn btn-primary">Logout</button></a></tr>
-
+                      <tr id="but"> <a href="../../LandingPage.html"><button id="logout" style = "background: #61A43D" class= "btn btn-success">Logout</button></a></tr>
+                      
                       <tr>
                         <form th:action="'/users/'+${ud}" method="post">
                           <input type="hidden" name="uiddd" th:value="${ud}"/>
-                          <a href=""><button id="logout" style = "background: #61A43D" class= "btn btn-primary" type="submit" >Profile</button></a> 
+                          <a href=""><button id="logout" style = "background: #61A43D" class= "btn btn-success" type="submit" >Profile</button></a> 
                       </form> 
                       </tr>
                   </table>

@@ -1,4 +1,4 @@
-img {
+imgg {
     width: 100%;
     clip-path: circle();
 }
@@ -51,12 +51,12 @@ img {
     background-color: #267cee; 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 23px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
-  border-radius: 8px;
+  font-size: 14px;
+  border-radius: 6px;
 }
 
 

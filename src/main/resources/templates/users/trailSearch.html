@@ -12,41 +12,41 @@
 
     </head>
 <body>
-<DIV class="T">
-            <div class="wrapp">
-                <div class="sidebar">
-                    <a href="#" class="logo"><img src="/img/logo1.jpg" alt=""></a>
-                    <ul>
-                        <li><i>                     |</i></li>
-                        <div class="current">
-                        <form th:action="'/users/trailS/'+${ud}" method="post">
-                            <input type="hidden" name="uiddd" th:value="${ud}"/>
-                            <li><a href=""><button class=""  type="submit" >Search </button></a> </li>
-                          </form> 
-                        </div>
-                        <form th:action="'/users/'+${ud}" method="post">
-                            <input type="hidden" name="uiddd" th:value="${ud}"/>
-                            <li><a href=""><button class=""  type="submit" >Profile</button></a> </li>
-                        </form> 
-
-
-                  
-                    </ul> 
-                    <button id="btnChangeBg">Change Background</button>
-                    <script>
-                      document.querySelector('#btnChangeBg').addEventListener('click', () => {
-                        Confirm.open({
-                          title: 'Background Change',
-                          message: 'Are you sure you wish the background color?',
-                          onok: () => {
-                            document.body.style.backgroundColor = 'blue';
-                          }
-                        })
-                      });
-                    </script>
-                </div>
-                
-            </div>        
+  <nav class="navbar navbar-expand-lg " style="background-color: #ffffff;">
+        
+    <img class="pr-5" src="/img/logo1trans.png" alt="TrekMate" style="width:70px;height:60px;right: 10px;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"style="background-color: #e3f2fd;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav ">
+                  <form th:action="'/users/'+${user.uid}" method="post">
+                        <input type="hidden" name="uiddd" th:value="${user.uid}"/>
+                        <button class="btn" style="background-color: black; color: #ffffff;" type="submit" >Back</button>
+                      </form> 
+                </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Search
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <form th:action="'/users/trailS/'+${ud}" method="post">
+              <input type="hidden" name="uiddd" th:value="${ud}"/>
+              <div class="d-flex justify-content-center">
+              <button id="trail"  class= "btn btn-success"  type="submit">Search Friends</button>
+              </div>
+            </form> 
+           <p></p>
+           
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../LandingPage.html">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+     
     
     <div class="container">
 
@@ -56,9 +56,9 @@
 
                 <div  class ="search-bar">
                     <form action="/users/searched" method="post">
-                    <input name="tr" type="text" class="input" id="input-box" placeholder="search a trail...." >
+                    <input name="tr"  type="text" class="input" id="input-box" placeholder="search a trail...." >
                     <input type="hidden" name="uiddd" th:value="${ud}"/>
-                    <button type="submit"> <img src="/img/search.png" alt=""> </button>
+                    <button class="sb" type="submit"> <img src="/img/search.png" alt=""> </button>
                     </form>
 
                     <div class="autocom-box">
@@ -72,9 +72,13 @@
         
         
     </div>
-</DIV>
+
    <script src="/js/trailSearch2.js"></script>
    <script src="/js/trailSearchList.js"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     
 
 </body>
 </html>
