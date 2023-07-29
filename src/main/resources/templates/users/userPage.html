@@ -27,6 +27,7 @@
                       <tr>
                         <form th:action="'/users/trailS/'+${ud}" method="post">
                           <input type="hidden" name="uiddd" th:value="${ud}"/>
+                          <input type="hidden" name="uname" th:value="${user.name}"/>
                           <button id="trail" style = "background: #61A43D" class= "btn btn-primary"  type="submit">search</button>
                         
                         </form> 
