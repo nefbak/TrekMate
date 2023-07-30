@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/trailSearch2.css">
     <script src="/js/trailSearch.js" defer></script>
     <script src="/js/trailSearchList.js" defer></script>
+    <script src="/js/weather.js" defer></script>
     <title>Planning a Trail</title>
     <style>
         body{
@@ -90,7 +91,7 @@
         </div>
         
         <div id="userExp">
-            <span>Experiences</span>
+            <p class="title">Experiences</p>
             <form th:action="'/users/'+${ud}+'/review'" method="post">
                 <input type="hidden" name="uiddd" th:value="${ud}"/>
                 <input type="hidden" name="tiddd" th:value="${trail.tid}"/>
@@ -108,19 +109,29 @@
         
         <div id="trailPhotos">
 
-            <span>Photos</span>
+            <p class="title">Photos</p>
             <form th:action="'/users/'+${ud}+'/addPhoto'" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="uiddd" th:value="${ud}"/>
                 <input type="hidden" name="tiddd" th:value="${trail.tid}"/>
                 <button id="photoAdd" type="submit">Add a Photo</button>
             </form>
         </div>
+
+        <div id="groups">
+            <p class="title">Groups</p>
+            <form th:action="'/users/'+${ud}+'/trailGroups'" method="post">
+                <input type="hidden" name="uiddd" th:value="${ud}"/>
+                <input type="hidden" name="tiddd" th:value="${trail.tid}"/>
+                <input type="hidden" name="trailName" th:value="${trail.name}"/>
+                <input type="hidden" name="location" th:value="${trail.location}"/>
+                <button id="groupAdd" type="submit" >View All Groups</button></a> 
+            </form> 
+        </div>
         
-        
-        
-        
-        
-        
+        <div id="weather">
+        </div>
     </div>
+
+    <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com" border="0"></a>
 </body>
 </html>

@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo3.models.Photo;
 import com.example.demo3.storage.StorageFileNotFoundException;
@@ -77,10 +76,9 @@ public class PhotosController {
         storageService.store(file);
         
         storageService.sendToRepo(uid, tid, filename);
-        //List<Review> userPhoto = photoRepo.findByUid(uid);
         System.out.println(filename);
         String message = "You successfully uploaded " + file.getOriginalFilename()+ "~";
-        //redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + file.getOriginalFilename()+ "~");
+
         model.addAttribute("message", message);
         model.addAttribute("ud", uid);
         model.addAttribute("td", tid);
@@ -92,7 +90,6 @@ public class PhotosController {
     @GetMapping("users/{ud}/gallery")
     public String viewGallery(Model model, @PathVariable("ud") int ud){
         System.out.println("Getting all photos");
-        // TODO: get all photos of user from database
         List<Photo> gallery = storageService.findAllUserPhotos(ud);
         model.addAttribute("gal", gallery);
         return "users/gallery";

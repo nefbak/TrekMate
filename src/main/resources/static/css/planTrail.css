@@ -63,20 +63,28 @@ body{
 }
 
 
-#trailPhotos, #findTrail, #userExp{
+#trailPhotos, #findTrail, #userExp, #weather, #groups{
     position: relative;
     border-color: #61a43d;
     border-style: solid;
     border-radius: 10px;
 }
 
-#trailPhotos{
+#trailPhotos, #userExp, #weather, #groups{
+    margin-left: 25px;
+}
+
+#trailPhotos, #weather, #groups{
     float:left;
     width: 30%;
-    height: 370px;
+    height: 100px;
     padding: 10px;
     margin-right: 5px;
     margin-top: 60px;
+}
+
+#weather{
+    height: 250px;
 }
 
 #findTrail{
@@ -89,11 +97,12 @@ body{
     position: relative;
     float: left;
     width: 30%;
-    height: 370px;
+    height: 100px;
     padding: 10px;
+    margin-top: 40px;
 }
 
-.expAdd, .expView{
+.expAdd, .expView, #photoAdd, #groupAdd{
     outline: none;
     border: none;
     border-radius: 10px;
@@ -115,9 +124,19 @@ body{
     left: 10px;
 }
 
-.expAdd:hover, .expView:hover{
+#photoAdd{
+    left: 33%;
+}
+
+#groupAdd{
+    left: 30%;
+}
+
+.expAdd:hover, .expView:hover, #photoAdd:hover, #groupAdd:hover{
     background-color: #345822;
 }
+
+
 
 #map{
     float: left;
@@ -126,3 +145,19 @@ body{
     z-index: 10;
     border-radius: 10px;
    }
+
+.title{
+    text-align: center;
+}
+
+.day{
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.text{
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: normal;
+    font-size: 11pt;
+}
