@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/hikeExp.css">
+    <link rel="stylesheet" href="/css/groupsAdd.css">
     <title>Create a Group</title>
 </head>
 <body>
     <div id="formContainer">
         <h2 id="reviewHeader">Create a Group</h2>
         <form id="reviewForm" action="/addedGroup" method="post">
-            <!--<input type="text" name="location" class="reviewElement" placeholder="Location of Hike">
-            <input type="text" name="trailName" class="reviewElement" placeholder="Name of Trail">-->
             <span class="reviewElement" th:text="${location}"></span>
             <span class="reviewElement" th:text="${trailName}"></span>
             <input type="date" name="date" class="reviewElement">
