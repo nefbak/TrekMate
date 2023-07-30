@@ -14,7 +14,7 @@
             .bb{
                position:relative;
                left: 2px; 
-               top: 55px;
+               top: 40px;
             }
             .navbar{
                 height: 100px;
@@ -61,7 +61,6 @@
 
 
 
-
     <section id="features" >
         <div class="featcontainer">
             
@@ -79,7 +78,14 @@
                     <div class="service card-effect bounceInUp">
                         <div class="iconbox" >
                             <!-- profilePhoto -->
-                            <i class='bx bxs-check-shield'><img class="imgg" src="/img/profile.png" alt=""></i>
+                            <form th:action="'/users/'+${review.uid}+'/other'" method="post" id="userButtons">
+                                <input type="hidden" name = "uiddd" th:value="${review.uid}">
+                                <input type="hidden" name = "uog" th:value="${ud}">
+                                <input type="hidden" name="ti" th:value="${tid}"/>
+                                <button id = "hid" class="btn btn-success btn-lg" type="submit" style="text-align: center;">Profile</button>
+                             
+                                <i class='bx bxs-check-shield' ><img src="/img/profile.png" alt=""></i>
+                            </form>
 
                         </div>
                         <p><span th:text="${review.difficulty}"></span>/10</p>
