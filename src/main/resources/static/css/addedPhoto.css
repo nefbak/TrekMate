@@ -1,0 +1,113 @@
+main {
+    margin-top: 50px;
+  }
+  
+  #but {
+    border: 10px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+    width: 10px;
+  }
+  
+  #profile {
+    float: right;
+    display: inline-block;
+    text-align: center;
+    margin-right: 20px;
+    width: 70px;
+    height: 35px;
+    font-size: 10pt;
+  }
+  
+  
+  /* the header */ 
+  .header {
+    padding: 10px 16px;
+    background: #ffffff;
+    color: #345822;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  
+  #title {
+    margin-top: 10px;
+  }
+  
+  #logout {
+    /*padding: 10px 16px;*/
+    background: #61A43D;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    float: right;
+    text-align: right;
+    width: 70px;
+    height: 35px;
+    font-size: 10pt;
+    margin-right: 10px;
+    margin-top: 0px;
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+  
+  .sticky + .content {
+    padding-top: 102px;
+  }
+
+  .buttons {
+    width: 200px;
+    margin: 0 auto;
+    display: inline;
+    padding-top: 10px;
+  }
+
+  #container{
+    margin:auto;
+    margin-top: 50px;
+    width: 90%;
+    height: 90%;
+    background-color: #B8F27D;
+    opacity: 80%;
+    margin-bottom: 200px;
+    border-radius: 10px;
+    padding-top: 100px;
+  }
+
+  #subtitle{
+    text-align: center;
+    font-size: 20pt;
+  }
+
+  #message{
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  #photoSpot{
+    position:relative;
+    left: 30%;
+    margin-bottom: 30px;
+  }
+
+  #redirect{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #61a43d;
+    color: white;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-left: 47%;
+    margin-bottom: 30px;
+
+  }
