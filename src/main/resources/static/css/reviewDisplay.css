@@ -1,4 +1,4 @@
-imgg {
+.imgg{
     width: 100%;
     clip-path: circle();
 }
@@ -48,7 +48,7 @@ img {
     z-index: 1;
 }
 .leaveButton{
-    background-color: #267cee; 
+background-color: #267cee; 
   border: none;
   color: white;
   padding: 10px 23px;
