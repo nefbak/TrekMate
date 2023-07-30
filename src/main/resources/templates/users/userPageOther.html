@@ -6,6 +6,12 @@
     <title>User page</title>
     <link rel="stylesheet" href="/css/userPage.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+      .b{
+        position: relative;
+        top: 20px;
+      }
+      </style>
     <nav class="navbar navbar-expand-lg " style="background-color: #ffffff;">
         
       <img class="pr-5" src="/img/logo1trans.png" alt="TrekMate" style="width:70px;height:60px;right: 10px;">
@@ -14,26 +20,10 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav ">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Search
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <form th:action="'/users/trailS/'+${uOg}" method="post">
-                <input type="hidden" name="uiddd" th:value="${uOg}"/>
-                <button id="trail" style = "background: #61A43D" class= "btn btn-primary"  type="submit">Search New Trails</button>
-              </form> 
-             <form action="">
-              <br>
-             </form>
-             <form th:action="'/users/trailS/'+${uOg}" method="post">
-              <input type="hidden" name="uiddd" th:value="${uOg}"/>
-              <button id="trail" style = "background: #61A43D" class= "btn btn-primary"  type="submit">Find Your Friends</button>
-            
-            </form> 
-             
-            </div>
-          </li>
+          <li><form th:action="'/users/trailS/'+${uOg}" method="post">
+            <input type="hidden" name="uiddd" th:value="${uOg}"/>
+            <div class="b"><a href=""><button id="trail" style = "background: #ffffff; color: rgb(36, 36, 36);"  class= "btn "  type="submit">Search</button></a></div>
+          </form> </li>
           <li class="nav-item">
             <a class="nav-link" href="../../LandingPage.html">Logout</a>
           </li>
