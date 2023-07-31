@@ -1,1 +1,1 @@
-let suggestions = ['Grouse Grind', 'The Chief','Garibaldi Lake','Stawamus Chief','', 'Coquitlam Crunch' ,'Joffre Lakes', "Saint Mark's Summit",'Quarry Rock'];
+let suggestions = ['Grouse Grind', 'The Chief','Garibaldi Lake','Stawamus Chief','', 'Coquitlam Crunch' ,'Joffre Lakes', "Saint Mark's Summit",'Quarry Rock', 'Dog Mountain Trail', 'Kennedy Falls', 'Cypress Provincial Park', 'Cabin Lake', 'Eqgle Bluffs', 'Shoreline Trail'];
