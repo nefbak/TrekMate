@@ -1,4 +1,4 @@
-.search-bar img{
+/*.search-bar img{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,13 +29,16 @@
     width: 40px;
 }
 
+
 .search-bar button{
   background: transparent;
+  position: absolute;
+  right: 90px;
+  top: -21px;
  border: 0;
  border-radius: 50%;
  width: 60px;
  height: 60px;
- color: #ffffff;
  cursor: pointer;
 
 }
@@ -155,4 +158,120 @@
   animation-duration: 0.2s;
   animation-fill-mode: forwards;
   animation-delay: 0.2s;
+} */
+
+.search-bar img{
+  position: relative;
+  top: 10px;
+  left: 100px;
+
+}
+
+.search-bar input{
+  flex: 1;
+  height: 15px;
+  border: 0;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  color: #000000;
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+::placerholder{
+  color: #000000;
+}
+
+.search-bar button img{
+  width: 40px;
+}
+
+.search-bar button{
+background: transparent;
+border: 0;
+border-radius: 50%;
+width: 60px;
+height: 60px;
+color: #ffffff;
+cursor: pointer;
+margin-left: 300px;
+}
+
+.search-bar{
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
+  background: #fdfdfd;
+  opacity: 0;
+  margin: auto;
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar-move{
+  z-index: 0;
+  top: 65px;
+}
+
+.search-bar-hide{
+  animation: fadeOut 0.3s linear forwards;
+}
+
+.search-bar-show{
+animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeOut {
+0% {opacity: 1;}
+100% {opacity: 0;}
+}
+
+@keyframes fadeIn {
+0% {opacity: 0;}
+100% {opacity: 1;}
+}
+
+.search-bar.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.search-bar.active .autocom-box li{
+  display: block;
+}
+
+.search-bar .autocom-box{
+  padding: 10px 8px;
+  max-height: 280px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+}
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: default;
+  color: #000000;
+  font-size: larger;
+  border-radius: 3px;
+  display: none;
+}
+
+.autocom-box li:hover{
+  background-color: #5a5a5a;
+}
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+list-style: none;
+text-decoration: none;
+
 }

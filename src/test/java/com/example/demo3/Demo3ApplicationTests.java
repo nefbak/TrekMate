@@ -145,14 +145,58 @@ public class UsersControllerTest {
 
 package com.example.demo3;
 
+import static org.assertj.core.api.Assertions.assertThat;
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+// import static org.junit.jupiter.api.Assertions.assertTrue;
+
+// import java.util.ArrayList;
+// import java.util.List;
+
+// import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+// import org.springframework.http.MediaType;
+// import org.springframework.test.web.servlet.MockMvc;
+// import org.springframework.test.web.servlet.MvcResult;
+// import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import com.example.demo3.controllers.UsersController;
+// import com.example.demo3.models.User;
+
+// import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class Demo3ApplicationTests {
 
+    @Autowired
+    private UsersController controller;
+
+    // @Autowired
+    // private MockMvc mockMvc;
+
     @Test
-    void contextLoads() {
+    public void contextLoads() throws Exception{
+      assertThat(controller).isNotNull();
     }
+
+    // @Test
+    // public void testGet1() throws Exception{
+    //   List<User> userTestList = new ArrayList<>();
+    //   User user1 = new User();
+    //   user1.setName("bubbles");
+    //   userTestList.add(user1);
+      
+    //   mockMvc.perform("/users/view").andExpect(status().isOk()).andExpect(jsonPath("$[0].name",Matchers.equalTo("bubbles")));
+
+    //   String uri = "/users/view";
+    //   MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri).accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
+
+    //   int status = mvcResult.getResponse().getStatus();
+    //   assertEquals(200,status);
+    //   String content = mvcResult.getResponse().getContentAsString();
+    //   User[] usersTestList = super.mapFromJson(content, User[].class);
+    //   assertTrue(usersTestList.length > 0);
+    // }
 
 }

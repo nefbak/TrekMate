@@ -1,0 +1,136 @@
+#groupNameH{
+    text-align: center;
+    font-size:x-large;
+    color: white;
+    background-color: #61A43D;
+}
+
+#groupSizeH{
+    text-align: center;
+    font-size:x-large;
+    background-color: #FFC300;
+    color: white;
+
+}
+
+#OptionsH{
+    text-align: center;
+    font-size:x-large;
+    background-color: #C49145;
+    color: white;
+
+}
+
+#trailInfoH{
+    text-align: center;
+    font-size:x-large;
+    background-color: #397B7F;
+    color: white;
+}
+
+#trailAt{
+    text-align: center;
+    background-color: #4CA4A9;
+    color: white;
+}
+
+/* all group related info */
+
+#groupName{
+    background-color: #b8f27d;
+    text-align: center;
+    font-weight: 500;
+    font-size: large;
+}
+
+#trailInfo{
+    background-color: #9CD0D3;
+    text-align: center;
+    font-weight: 500;
+    font-size: large;
+}
+
+#groupSize{
+    background-color: #FFD447;
+    text-align: center;
+    font-weight: 500;
+    font-size: large;
+}
+
+#leaveGroup{
+    background-color: #f8dda4;
+    text-align: center;
+    font-weight: 500;
+    font-size: large;
+}
+
+.leaveButton{
+    background-color: #f44336; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+.l{
+border: none;
+color: white;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 15px;
+border-radius: 8px;
+}
+
+.title{
+    color: #345822;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.header {
+    padding: 10px 16px;
+    background: #ffffff;
+    color: #345822;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  .content {
+    padding: 16px;
+  }
+
+  #title {
+    margin-top: 10px;
+  }
+
+  #logout {
+    padding: 10px 16px;
+    background: #61A43D;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    float: right;
+    text-align: right;
+    width: 70px;
+    height: 35px;
+    font-size: 10pt;
+    margin-right: 10px;
+    margin-top: 1px;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+  
+  .sticky + .content {
+    padding-top: 102px;
+  }
+

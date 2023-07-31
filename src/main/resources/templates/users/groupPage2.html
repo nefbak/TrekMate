@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/groupPage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        .bb{
+           position:relative;
+           left: px; 
+           font-size: medium;
+           top: 25px;
+        }
+        .navbar{
+            height: 100px;
+        }
+        .it{
+            position: relative;
+            top: 27px;
+        }
+    </style>
+    <div class="header" id="myHeader">
+        <nav class="navbar navbar-expand-lg " style="background-color: #ffffff;">
+        
+            <img class="pr-5" src="/img/logo1trans.png" alt="TrekMate" style="width:70px;height:60px;right: 10px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"style="background-color: #e3f2fd;">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+              <ul class="navbar-nav ">
+                <li class="nav-item active">
+                    <a th:href="@{/ad}"  class=" navbar-brand translate-middle link-light"><form action="/users/trail" method="post">
+                        <input type="hidden" name="uiddd" th:value="${ud}"/>
+                        <input type="hidden" name="ti" th:value="${tid}"/>
+                        <div class="bb">
+                        <button  class="l" style="background-color: #ffffff; color: black;" type="submit"><img class="pr-5" src="/img/back.png" alt="TrekMate" style="width:40px;height:40px; position: relative; left: -20px; top: -10px; ">  </button></div>
+                        </form></a> 
+                </li>
+                
+                <li class="nav-item">
+                    <div class="it">
+                  <a class="nav-link" href="../../LandingPage.html">Logout</a></div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+       
+    </div>
+</head>
+
+
+<body>
+    <main>
+        <div class="title">Groups</div>
+        <br>
+        <form th:action="'/users/'+${ud}+'/addGroup'" method="post" class="d-flex justify-content-center">
+            <input type="hidden" name="uiddd" th:value="${ud}"/>
+            <input type="hidden" name="tiddd" th:value="${tid}"/>
+            <input type="hidden" name="trailName" th:value="${trailName}"/>
+            <input type="hidden" name="location" th:value="${location}"/>
+            <button class="leaveButton" style="background-color: #61A43D;">Create A New Group</button>
+        </form> 
+        <br>
+
+        <table class="table w-7">
+            <thead>
+                <tr>
+                    <th id="groupNameH" rowspan="2" >Group Name</th>
+                    <th id="trailInfoH" colspan="4">Trail Info</th>
+                    <th id="groupSizeH" rowspan="2">Group Size</th>
+                    <th id="OptionsH" rowspan="2">Options</th>
+                </tr>
+                <tr>
+                    <th id="trailAt">Trail Name</th>
+                    <th id="trailAt">Location</th>
+                    <th id="trailAt">Difficulty</th>
+                    <th id="trailAt">Date</th>
+                </tr>
+            </thead>
+            <tbody th:each="group:${groups}">
+                <tr>
+
+                    <!-- not templated -->
+
+                    <!-- <td id="groupName">Hikers</td>
+                    <td id="trailInfo">coquitlam crunch</td>
+                    <td id="trailInfo">coquitlam bc</td>
+                    <td id="trailInfo">5/10</td>
+                    <td id="trailInfo">7/24/23</td>
+                    <td id="groupSize">5</td>
+                    <td id="leaveGroup">
+                        <form action="button">
+                            <button class="leaveButton">Leave Group</button>
+                        </form>
+                    </td> -->
+
+                    <!-- templated -->
+
+                    <td id="groupName" th:text="${group.name}" ></td>
+                    <td id="trailInfo" th:text="${group.trailName}"></td>
+                    <td id="trailInfo" th:text="${group.location}"></td>
+                    <td id="trailInfo" th:text="${group.difficulty}"></td>
+                    <td id="trailInfo" th:text="${group.date}"></td>
+                    <td id="groupSize" th:text="${group.uids.size()} + '/' + ${group.size}"></td>
+                    <td id="leaveGroup">
+                        <form action = "/joinGroup" method="post">
+                            <input type="hidden" name="uiddd" th:value="${ud}"/>
+                            <input type="hidden" name="tiddd" th:value="${tid}"/>
+                            <input type="hidden" name="gid" th:value="${group.gid}"/>
+                            <button class="leaveButton" type = "submit" style="background-color: #61A43D;">Join This Group</button> 
+                        </form> 
+                    </td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

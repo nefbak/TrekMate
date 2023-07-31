@@ -2,10 +2,12 @@ package com.example.demo3.controllers;
 
 import java.util.List;
 import java.util.Map;
+
 import java.security.Provider.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.example.demo3.models.Review;
 import com.example.demo3.models.ReviewRepository;
 import com.example.demo3.models.User;
@@ -72,6 +75,38 @@ public class ReviewsController {
         return "users/hikeHistory";
     }
 
+    @PostMapping("/users/{ud}/userReviewsGuest")
+    public String getAllUserReviewsOther(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
+        System.out.println("getting reviews");
+        int uid = Integer.parseInt(newreview.get("uiddd"));
+        int uOg = Integer.parseInt(newreview.get("uog"));
+        //int tid = Integer.parseInt(newreview.get("tiddd"));
+        //String name = newreview.get("name");
+        //System.out.println("TEST: " + name);
+        List<Review> reviews = reviewRepo.findByUid(uid);
+        model.addAttribute("reviews", reviews);
+        model.addAttribute("ud", uid);
+        model.addAttribute("uog", uOg);
+       // model.addAttribute("tid", tid);
+        //model.addAttribute("name", name);
+        return "users/hikeHistoryOther";
+    }
+
+    @PostMapping("/users/{ud}/userReviewsAdmin")
+    public String getAllUserReviewsAdmin(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
+        System.out.println("getting reviews");
+        int uid = Integer.parseInt(newreview.get("uiddd"));
+        //int tid = Integer.parseInt(newreview.get("tiddd"));
+        //String name = newreview.get("name");
+        //System.out.println("TEST: " + name);
+        List<Review> reviews = reviewRepo.findByUid(uid);
+        model.addAttribute("reviews", reviews);
+        model.addAttribute("ud", uid);
+       // model.addAttribute("tid", tid);
+        //model.addAttribute("name", name);
+        return "users/hikeHistoryAdmin";
+    }
+
     @PostMapping("/postReview")
     public String reviewed(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
         String name = newreview.get("trailName");
@@ -98,6 +133,18 @@ public class ReviewsController {
         reviewRepo.delete(r); //delete from database
         model.addAttribute("ud", uid);
         return "users/removedReview";
+    }
+
+    @PostMapping("/review/removeAdmin")
+    public String removeReviewAdmin(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
+        int rid = Integer.parseInt(newreview.get("ridd"));
+        int uid = Integer.parseInt(newreview.get("uidd"));
+        System.out.println("d");
+        System.out.println("Delete Review " + rid);
+        Review r = reviewRepo.findByRid(rid).get(0);
+        reviewRepo.delete(r); //delete from database
+        model.addAttribute("ud", uid);
+        return "users/removedReviewAdmin";
     }
 
     

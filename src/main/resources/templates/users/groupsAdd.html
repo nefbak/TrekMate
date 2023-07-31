@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/groupsAdd.css">
+    <title>Create a Group</title>
+</head>
+<body>
+    <div id="formContainer">
+        <h2 id="reviewHeader">Create a Group</h2>
+        <form id="reviewForm" action="/addedGroup" method="post">
+            <span class="reviewElement" th:text="${location}"></span>
+            <span class="reviewElement" th:text="${trailName}"></span>
+            <input type="date" name="date" class="reviewElement">
+            <label for="difficulty">What difficulty level do you want this group to be?</label>
+            <input type="range" name="difficulty" id="reviewDifficulty" min="1" max="10">
+            <input type="hidden" name="trailName" th:value="${trailName}"/>
+            <input type="hidden" name="location" th:value="${location}"/>
+            <label for="size">What size do you want this group to be?</label>
+            <input type="number" step="1" name="size"/>
+            <input type="hidden" name="uiddd" th:value="${ud}"/>
+            <input type="hidden" name="tiddd" th:value="${tid}"/>
+            <input type="text" name="name" placeholder="What is the name of your group?"/>
+            <!--input type="file" name="photos" id="reviewPhotos"-->
+            <!--label for="reviewPhotos">Upload your photos</label-->
+            <button type="submit" class="options">Post</button>
+            <form th:action="'/users/'+${ud}+'/trailGroups'" method="post">
+                <input type="hidden" name="uiddd" th:value="${ud}"/>
+                <input type="hidden" name="tiddd" th:value="${tid}"/>
+                <input type="hidden" name="trailName" th:value="${trailName}"/>
+                <input type="hidden" name="location" th:value="${location}"/>
+                <button class="options" type="submit" >Go back to view groups page</button></a> 
+            </form> 
+        </form>
+    </div>
+    
+</body>
+</html>

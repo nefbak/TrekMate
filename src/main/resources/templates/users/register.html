@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/welcomePages.css">
+    <link rel="icon" href="img/logo1.jpg" type="image/gif/jpg">
     <title>Register for TrekMate</title>
     <style>
         body{
@@ -20,16 +21,18 @@
 
     <div id="boxRegister">
         <div class="register-form">
-            <!--<form class="userRegister" action="/signup" method="post">-->
+
             <form class="userRegister" action="/signup" method="post">
                 <input type="text" class="userElement" name="name" placeholder="Name">
-                <input type="text" class="userElement" name="age" placeholder="Age">
+                <input type="number" min = "1" class="userElement" name="age" placeholder="Age">
                 <input type="text" class="userElement" name="location" placeholder="Location">
                 <input type="email" class="userElement" name="email" autocomplete="email" placeholder="Email">
                 <input type="password" class="userElement" name="password" autocomplete="new-password" placeholder="New Password"><br>
                 <label for="difficulty"> How experienced at hiking are you?</label>
                 <input type="range" name="difficulty" min="1" max="10">
                 <button type="submit" class="small_login">Register</button>
+                <span th:text="${error} ?: ' '"></span>
+                <br>
                 <button type="button" onclick="window.location.href='/welcome.html'" class="return">Go back</button>
             </form>
         </div>

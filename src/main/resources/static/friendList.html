@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Page</title>
+    <link rel="stylesheet" href="/css/friendList.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <div class="header" id="myHeader">
+        
+        <h2 id="title">
+            <img src="/img/logo1.jpg" alt="TrekMate" style="width:70px;height:60px;">
+  
+            <div class="buttons">
+               <!-- <button id="logout" style = "background: #61A43D" class= "btn btn-primary">Logout</button>
+                <form action="/user/remove" method="post">
+                <button id="trail" style = "background: #61A43D" class= "btn btn-primary" type="submit">Add Trail</button> -->
+                <style>
+                    
+                        
+        
+                </style>
+  
+                <table style="border-spacing: 10px;">
+                    <tr id="but"> 
+                        <a href="../../LandingPage.html"><button id="logout" style = "background: #61A43D" class= "btn btn-primary">Logout</button></a></tr>
+                    <tr>
+                        <form th:action="'/users/trailS/'+${ud}" method="post" id="search">
+                            <input type="hidden" name="uiddd" th:value="${ud}"/>
+                            <button id="trail" style = "background: #61A43D" class= "btn btn-primary"  type="submit">search</button>
+                          
+                        </form> 
+                    </tr>
+                </table>
+            </div>
+        </h2>
+    </div>
+</head>
+<body>
+    <script>
+        /* window.onscroll = function() {myFunction()};
+         
+         var header = document.getElementById("myHeader");
+         var sticky = header.offsetTop;*/
+         
+         function myFunction() {
+           if (window.pageYOffset > sticky) {
+             header.classList.add("sticky");
+           } else {
+             header.classList.remove("sticky");
+           }
+         }
+     </script> 
+
+     <main id="main">
+        <div id="mainTitle">Friends List</div>
+        <br>
+        <br>
+        <div class="list-group" th:each="friend: ${friends}" id="list">
+            <ul class="list-group list-group-flush" id="someUser">
+                <li class="list-group-item">
+                    <p id="userName" th:text="${friend.name}"></p>
+                    <form action="button" id="buttons" class="view">
+                        <button id="viewProfile" class="btn btn-success ">View Profile</button>
+                    </form>
+                    <form action="button" id="buttons" class="unf">
+                        <button id="unfollow" class="btn btn-success">Unfollow</button>
+                    </form>
+                </li>
+                
+            </ul>
+        </div>
+     </main>
+</body>
+</html>
