@@ -29,13 +29,16 @@
     width: 40px;
 }
 
+
 .search-bar button{
   background: transparent;
+  position: absolute;
+  right: 90px;
+  top: -21px;
  border: 0;
  border-radius: 50%;
  width: 60px;
  height: 60px;
- color: #ffffff;
  cursor: pointer;
 
 }

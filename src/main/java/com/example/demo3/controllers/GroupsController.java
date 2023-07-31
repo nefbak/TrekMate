@@ -19,33 +19,134 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.demo3.models.Group;
+import com.example.demo3.models.GroupRepository;
 import com.example.demo3.models.Review;
-import com.example.demo3.models.ReviewRepository;
 import com.example.demo3.models.User;
 
 import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
-public class ReviewsController {
+public class GroupsController {
     
     @Autowired
-    private ReviewRepository reviewRepo;
+    private GroupRepository groupRepo;
 
 
-    @PostMapping("/users/{ud}/review")
-    public String addReview(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
-        String name = newreview.get("name");
-        String location = newreview.get("location");
-        int uid = Integer.parseInt(newreview.get("uiddd"));
-        int tid = Integer.parseInt(newreview.get("tiddd"));
-        model.addAttribute("name", name);
-        model.addAttribute("location", location);
+    @PostMapping("/addedGroup")
+    public String addedGroup(@RequestParam Map<String, String> newgroup, HttpServletResponse response, Model model, @ModelAttribute("group") Group group){
+        
+        int size = Integer.parseInt(newgroup.get("size"));
+
+        System.out.println("SIZE: " + size);
+
+        if (size > 1) {
+            System.out.println("Check");
+            String trailName = newgroup.get("trailName");
+            String name = newgroup.get("name");
+            String location = newgroup.get("location");
+            String date = newgroup.get("date");
+            int tid = Integer.parseInt(newgroup.get("tiddd"));
+            int uid = Integer.parseInt(newgroup.get("uiddd"));
+            String difficulty = newgroup.get("difficulty");
+            //int[] uids = new int[size];
+            List<Integer> uids = new ArrayList<>();
+            uids.add(uid);
+            groupRepo.save(new Group(uids, date, name, location, trailName, difficulty, tid, size));
+            model.addAttribute("ud", uid);
+            model.addAttribute("tid", tid);
+            model.addAttribute("message", "Group Successfully Added");
+            return "users/addedGroup";
+        }
+
+        String trailName = newgroup.get("trailName");
+        String location = newgroup.get("location");
+        int tid = Integer.parseInt(newgroup.get("tiddd"));
+        int uid = Integer.parseInt(newgroup.get("uiddd"));
         model.addAttribute("ud", uid);
         model.addAttribute("tid", tid);
-        return "users/hikeExp";
+        model.addAttribute("location", location);
+        model.addAttribute("trailName", trailName);
+        return "users/groupPage2";
     }
 
-    @PostMapping("/users/{ud}/allReviews")
+    @PostMapping("/joinGroup")
+    public String joinGroup(@RequestParam Map<String, String> newgroup, HttpServletResponse response, Model model, @ModelAttribute("group") Group group){
+        
+        int uid = Integer.parseInt(newgroup.get("uiddd"));
+
+        int gid = Integer.parseInt(newgroup.get("gid"));
+
+        int tid = Integer.parseInt(newgroup.get("tiddd"));
+            
+            Group g = groupRepo.findByGid(gid).get(0);
+
+            int size = g.getUids().size();
+
+            List<Integer> u = g.getUids();
+
+            if (size == g.getSize()) {
+                model.addAttribute("message", "Unable to join group, this group is full");
+                model.addAttribute("ud", uid);
+                 model.addAttribute("tid", tid);
+                return "users/addedGroup";
+            } else if (u.contains(uid)) {
+                model.addAttribute("message", "You are already in this group");
+                model.addAttribute("ud", uid);
+                model.addAttribute("tid", tid);
+                return "users/addedGroup";
+            }
+
+        // User u = userRepo.save(new User(Age, Location, Name, Email, Password, Difficulty) );
+            u.add(uid);
+
+            g.setUids(u);
+
+            groupRepo.save(g);
+
+             
+            model.addAttribute("ud", uid);
+            model.addAttribute("tid", tid);
+            model.addAttribute("message", "Successfully Joined Group");
+            //return "redirect:/userPage.html";
+            return "users/addedGroup";
+    }
+
+    @PostMapping("/users/{ud}/trailGroups")
+    public String getAllGroups(@RequestParam Map<String, String> newgroup, HttpServletResponse response, Model model, @ModelAttribute("group") Group group){
+        System.out.println("getting groups");
+        int uid = Integer.parseInt(newgroup.get("uiddd"));
+        int tid = Integer.parseInt(newgroup.get("tiddd"));
+        //String name = newgroup.get("name");
+        String location = newgroup.get("location");
+        String trailName = newgroup.get("trailName");
+
+        //System.out.println("TEST: " + name);
+        List<Group> groups = groupRepo.findByTid(tid);
+        model.addAttribute("groups", groups);
+        model.addAttribute("ud", uid);
+        model.addAttribute("tid", tid);
+        //model.addAttribute("name", name);
+        model.addAttribute("location", location);
+        model.addAttribute("trailName", trailName);
+        return "users/groupPage2";
+    }
+
+    @PostMapping("/users/{ud}/addGroup")
+    public String addGroup(@RequestParam Map<String, String> newgroup, HttpServletResponse response, Model model, @ModelAttribute("group") Group group){
+        int uid = Integer.parseInt(newgroup.get("uiddd"));
+        int tid = Integer.parseInt(newgroup.get("tiddd"));
+        String location = newgroup.get("location");
+        String trailName = newgroup.get("trailName");
+
+        model.addAttribute("ud", uid);
+        model.addAttribute("tid", tid);
+        model.addAttribute("location", location);
+        model.addAttribute("trailName", trailName);
+        return "users/groupsAdd";
+    }
+
+    /*@PostMapping("/users/{ud}/allReviews")
     public String getAllReviews(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
         System.out.println("getting reviews");
         int uid = Integer.parseInt(newreview.get("uiddd"));
@@ -73,23 +174,6 @@ public class ReviewsController {
        // model.addAttribute("tid", tid);
         //model.addAttribute("name", name);
         return "users/hikeHistory";
-    }
-
-    @PostMapping("/users/{ud}/userReviewsGuest")
-    public String getAllUserReviewsOther(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
-        System.out.println("getting reviews");
-        int uid = Integer.parseInt(newreview.get("uiddd"));
-        int uOg = Integer.parseInt(newreview.get("uog"));
-        //int tid = Integer.parseInt(newreview.get("tiddd"));
-        //String name = newreview.get("name");
-        //System.out.println("TEST: " + name);
-        List<Review> reviews = reviewRepo.findByUid(uid);
-        model.addAttribute("reviews", reviews);
-        model.addAttribute("ud", uid);
-        model.addAttribute("uog", uOg);
-       // model.addAttribute("tid", tid);
-        //model.addAttribute("name", name);
-        return "users/hikeHistoryOther";
     }
 
     @PostMapping("/users/{ud}/userReviewsAdmin")
@@ -145,7 +229,7 @@ public class ReviewsController {
         reviewRepo.delete(r); //delete from database
         model.addAttribute("ud", uid);
         return "users/removedReviewAdmin";
-    }
+    } */
 
     
 

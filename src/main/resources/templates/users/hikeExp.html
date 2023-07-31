@@ -25,8 +25,12 @@
             <!--input type="file" name="photos" id="reviewPhotos"-->
             <!--label for="reviewPhotos">Upload your photos</label-->
             <button type="submit" class="options">Post</button>
-            <button type="button" onclick="window.location.href='/userPage.html'" class="options">Go back to Profile</button>
+            
         </form>
+        <form th:action="'/users/'+${ud}" method="post">
+            <input type="hidden" name="uiddd" th:value="${ud}"/>
+            <a href=""><button class="options" type="submit" >Profile</button></a> 
+        </form> 
     </div>
     
 </body>
