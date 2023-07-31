@@ -10,7 +10,7 @@
     <title>Edit User</title>
     <div class="header" id="myHeader">
         
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="height: 100px;">
         
             <img class="pr-5" src="/img/logo1trans.png" alt="TrekMate" style="width:120px;height:60px;right: 10px;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@
                 <li class="nav-item active">
                     <form th:action="'/users/'+${user.uid}" method="post">
                         <input type="hidden" name="uiddd" th:value="${user.uid}"/>
-                        <button class="btn"  type="submit" ><img class="nav-link" src="/img/home.png" alt="TrekMate" style="background-color: white; width:40px;height:40px; position: relative; top: -8px; left: -5px;"></button>
+                        <button class="btn"  style="background-color: white; color: white;" type="submit" ><img class="nav-link" src="/img/profilePic.png" alt="TrekMate" style="background-color: white; width:40px;height:40px; position: relative; top: -8px; left: -5px;"></button>
                       </form> 
                 </li>
 
