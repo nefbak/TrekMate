@@ -21,7 +21,7 @@
                 <li class="nav-item active">
                     <form th:action="'/users/'+${user.uid}" method="post">
                         <input type="hidden" name="uiddd" th:value="${user.uid}"/>
-                        <button class="btn btn-success"  type="submit" >Profile</button>
+                        <button class="btn"  type="submit" ><img class="nav-link" src="/img/home.png" alt="TrekMate" style="background-color: white; width:40px;height:40px; position: relative; top: -8px; left: -5px;"></button>
                       </form> 
                 </li>
      
@@ -43,7 +43,7 @@
     <center>
     <form th:action="'/users/'+${user.uid}" method="post">
         <input type="hidden" name="uiddd" th:value="${user.uid}"/>
-        <button class="btn btn-success"  type="submit" >Return to User Page</button>
+        <button class="btn " style="background-color: rgb(6, 71, 0); color: rgb(255, 255, 255); " type="submit" >Return to User Page</button>
       </form> 
     </center>
     <script>

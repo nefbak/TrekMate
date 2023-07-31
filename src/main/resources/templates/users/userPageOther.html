@@ -12,7 +12,7 @@
         top: 1px;
       }
       </style>
-    <nav class="navbar navbar-expand-lg " style="background-color: #ffffff;">
+    <nav class="navbar navbar-expand-lg " style="background-color: #ffffff; height: 100px;">
         
       <img class="pr-5" src="/img/logo1trans.png" alt="TrekMate" style="width:70px;height:60px;right: 10px;">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"style="background-color: #e3f2fd;">
@@ -22,11 +22,11 @@
         <ul class="navbar-nav ">
           <li><form th:action="'/users/trailS/'+${uOg}" method="post">
             <input type="hidden" name="uiddd" th:value="${uOg}"/>
-            <div class="b"><a href=""><button id="trail" style = "background: #ffffff; color: rgb(36, 36, 36);"  class= "btn "  type="submit">Search</button></a></div>
+            <div class="b"><a href=""><button id="trail" style = "background: #ffffff; color: rgb(36, 36, 36);"  class= "btn "  type="submit"><img class="pr-5" src="/img/search2.png" alt="TrekMate" style="width:40px;height:40px; left: -50px; top: -5px; "> </button></a></div>
           </form> </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="../../LandingPage.html">Logout</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>
@@ -126,7 +126,7 @@
                   <form th:action="'/users/'+${ud}+'/userReviewsGuest'" method="post" id="userButtons">
                     <input type="hidden" name = "uiddd" th:value="${ud}">
                     <input type="hidden" name = "uog" th:value="${uOg}">
-                    <button class="btn btn-success" type="submit" style="text-align: center;">Hike History</button>
+                    <button class="btn" type="submit" style="text-align: center; background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">Hike History</button>
                   </form>
               </center>
               </tr>
@@ -135,7 +135,7 @@
                 <center>
                 <form th:action="'/users/'+${uOg}" method="post" id="userButtons">
                   <input type="hidden" name = "uiddd" th:value="${uOg}">
-                  <button class="btn btn-success" type="submit" style="text-align: center;">Back to your Profile</button>
+                  <button class="btn"  type="submit" style="text-align: center; background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">Back to your Profile</button>
                 </form>
                </center>
               </tr> 

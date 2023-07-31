@@ -16,7 +16,7 @@
 
     <div class="header" id="myHeader">
         
-        <nav class="navbar navbar-expand-lg " style="background-color: #ffffff;">
+        <nav class="navbar navbar-expand-lg " style="background-color: #ffffff; height: 100px;">
         
             <img class="pr-5" src="/img/logo1trans.png" alt="TrekMate" style="width:70px;height:60px;right: 10px;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"style="background-color: #e3f2fd;">
@@ -28,7 +28,7 @@
                     <form th:action="'/users/'+${ud}+'/other'" method="post" id="userButtons">
                         <input type="hidden" name = "uiddd" th:value="${ud}">
                         <input type="hidden" name = "uog" th:value="${uog}">
-                        <button class="btn  btn-lg" type="submit" style="text-align: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: medium;">Back</button>
+                        <button class="btn  btn-lg" type="submit" style="text-align: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: medium;"><img class="pr-5" src="/img/back.png" alt="TrekMate" style="width:40px;height:40px;position: relative; left: -10px; top: -10px; "> </button>
                       </form>
                 </li>
                 <li class="nav-item">
