@@ -21,11 +21,6 @@ body{
     background-position: center;
     background-size: cover;
     position: relative;
-
-  
-    /* display: flex;
-    text-align: center;
-    justify-content: center; */
 }
 
 .search-bar img{
@@ -131,7 +126,6 @@ body{
 
 }
 .navbar img{
-
   position: absolute;
   left: 33px;
   top: 20px;
@@ -143,10 +137,7 @@ body{
 }
 
 .navbar{
-  
   height: 90px;
-
-
 }
 
 .buttons {

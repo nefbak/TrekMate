@@ -1,109 +1,3 @@
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/img/logo1.jpg" type="image/gif/jpg">
-    <link rel="stylesheet" href="/css/planTrail.css">
-    <link rel="stylesheet" href="/css/trailSearch2.css">
-    <script src="/js/trailSearch.js" defer></script>
-    <script src="/js/trailSearchList.js" defer></script>
-    <title>Planning a Trail</title>
-
-</head>
-<body>
-
-    <div id="optionBar">
-        <button type="button" id="search" class="options">Search</button>
-            <div class ="search-bar">
-                <form action="/users/searched" method="post">
-                    <input type="text" name="tr" class="input" id="input-box" placeholder="search a trail...." >
-                    <input type="hidden" name="uiddd" th:value="${ud}"/>
-                    <button type="submit"> <img src="/img/search.png" alt=""> </button>
-                    <div class="autocom-box">
-                    </div>
-                </form>
-            </div>
-        <form th:action="'/users/'+${ud}" method="post">
-            <input type="hidden" name="uiddd" th:value="${ud}"/>
-            <a href=""><button class="options"  type="submit" >Profile</button></a> 
-        </form> 
-
-        <button type="button" onclick="window.location.href='/LandingPage.html'" class="options">Log Out</button>
-    </div>
-
-    <div id="trailDisplayInfo">
-        <p id="trailName" th:text="${trail.name}"></p><br>
-        <p id="trailLocation" th:text="${trail.location}"></p>
-
-    </div>
-
-
-    <div id="trailDetails">
-        <div id="userExp">
-            <span>Experiences</span>
-            <form th:action="'/users/'+${ud}+'/review'" method="post">
-                <input type="hidden" name="uiddd" th:value="${ud}"/>
-                <input type="hidden" name="tiddd" th:value="${trail.tid}"/>
-                <input type="hidden" name="name" th:value="${trail.name}"/>
-                <input type="hidden" name="location" th:value="${trail.location}"/>
-                <a href=""><button class="expAdd" type="submit" >Add a Review</button></a> 
-            </form> 
-            <form th:action="'/users/'+${ud}+'/allReviews'" method="post">
-                <input type="hidden" name="uiddd" th:value="${ud}"/>
-                <input type="hidden" name="tiddd" th:value="${trail.tid}"/>
-                <input type="hidden" name="name" th:value="${trail.name}"/>
-                <a href=""><button class="expView" type="submit" >View All Reviews</button></a> 
-            </form> 
-        </div>
-  
-        <div id="findTrail">
-            <style>
-                #map{
-                 height: 800px;
-                 width: 100%;
-                 z-index: 10;
-                }
-            </style>
-            <span>
-            <div id="map">
-
-            </div>
-            <script th:inline="javascript">
-                /*<![CDATA[*/
-                function initMap(){
-                    var options = {
-                        zoom:15,
-                        center:{lat: /*[[${trail.lat}]]*/ 49.2826,lng: /*[[${trail.lon}]]*/ -123.1294}
-                    }
-        
-                    var map = new google.maps.Map(document.getElementById('map'), options);
-        
-                    //var marker = new google.maps.Marker({
-                      //  position:{lat: /*[[${trail.lat}]]*/ 49.2826,lng: /*[[${trail.lon}]]*/ -123.1294},
-                       // map:map
-                    //});
-        
-                    var infoWindow = new google.maps.InfoWindow({
-                        content:'<h1>Nelson Park</h1> <br> Very fun area'
-                    });
-        
-                   /* marker.addListener('click', function(){
-                        infoWindow.open(map, marker);
-                    });*/
-                }
-                /*]]>*/
-            </script>
-            <script async defer  
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZselLCynQZfG2uXE1x2l4DhB0_ZvtqXs&callback=initMap">   
-            </script>
-            </span>
-        </div>
-        
-    </div>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,14 +22,17 @@
 
     <div id="optionBar">
         <button type="button" id="search" class="options">Search</button>
+            
             <div class ="search-bar">
                 <form action="/users/searched" method="post">
-                    <input type="text" name="tr" class="input" id="input-box" placeholder="search a trail...." >
-                    <input type="hidden" name="uiddd" th:value="${ud}"/>
-                    <button type="submit"> <img src="/img/search.png" alt=""> </button>
-                    <div class="autocom-box">
-                    </div>
-                </form>
+                        <input name="tr"  type="text" class="input" id="input-box" placeholder="search a trail...." >
+                        <input type="hidden" name="uiddd" th:value="${ud}"/>
+                        <button class="sb" type="submit"> <img style="position:relative; left:  110px;" src="/img/search2.png" alt=""> </button>
+                        </form>
+    
+                        <div class="autocom-box">
+                        </div>
+                
             </div>
         <form th:action="'/users/'+${ud}" method="post">
             <input type="hidden" name="uiddd" th:value="${ud}"/>
