@@ -1,7 +1,3 @@
-
-
-
-
 main {
   margin-top: 50px;
 }
@@ -15,12 +11,8 @@ main {
 
 #trail {
   float: right;
+  text-align: right;
   display: inline-block;
-  text-align: center;
-  margin-right: 20px;
-  width: 70px;
-  height: 35px;
-  font-size: 10pt;
 }
 
 
@@ -145,5 +137,19 @@ padding-left: 20px;
   margin: 0 auto;
   display: inline;
   padding-top: 10px;
+}
+
+
+
+.navbar img{
+
+  position: absolute;
+  left: 33px;
+  top: 20px;
+}
+
+.navbar ul{
+  padding-top: 20px;
+  padding-right: 20px;
 }
 
