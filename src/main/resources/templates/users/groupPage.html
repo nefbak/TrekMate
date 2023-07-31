@@ -34,7 +34,7 @@
     </div> -->
     <nav class="navbar navbar-expand-lg " style="background-color: #ffffff; height: 80px;">
         
-        <img class="pr-5" src="/img/logo1trans.png" alt="TrekMate" style="width:70px;height:60px;right: 10px;">
+        <img class="pr-5" src="/img/logo1trans.png" alt="TrekMate" style="width:70px;height:60px; position: relative; left: 30px; top:15px;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"style="background-color: #e3f2fd;">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,20 +44,20 @@
             <li class="nav-item active">
                 <form th:action="'/users/'+${ud}" method="post">
                     <input type="hidden" name="uiddd" th:value="${ud}"/>
-                    <button class="btn"  type="submit" ><img class="nav-link" src="/img/home.png" alt="TrekMate" style="background-color: white; width:40px;height:40px; position: relative; top: -8px; left: -5px;"></button>
+                    <button class="btn"  type="submit" style="background-color: #ffffff; color: #ffffff;" ><img class="nav-link" src="/img/profilePic.png" alt="TrekMate" style="background-color: white; color: #ffffff; width:40px;height:40px; position: relative; top: 25px; left: -30px;"></button>
                   </form> 
             </li>
             <li class="nav-item">  
               <form th:action="'/users/trailS/'+${ud}" method="post">
               <input type="hidden" name="uiddd" th:value="${ud}"/>
               <div class="d-flex justify-content-center">
-              <button id="trail" style = "background: #ffffff; color: black;" class= "btn "  type="submit"><img class="nav-link" src="/img/search2.png" alt="TrekMate" style="width:40px;height:40px; position: relative; top: 3px; left: -10px;"></button>
+              <button id="trail" style = "background: #ffffff; color: rgb(255, 255, 255);" class= "btn "  type="submit"><img class="nav-link" src="/img/search2.png" alt="TrekMate" style="width:40px;height:40px; position: relative; top: 25px; left: -30px;"></button>
               </div>
             </form> 
           </li>
       
             <li class="nav-item">
-              <a class="nav-link" style="position: relative; top: 8px;" href="../../LandingPage.html">Logout</a>
+              <a class="nav-link" style="position: relative; top: 30px; ;left: -20px;" href="../../LandingPage.html">Logout</a>
             </li>
           </ul>
         </div>
