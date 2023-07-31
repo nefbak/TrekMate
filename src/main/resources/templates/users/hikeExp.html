@@ -10,11 +10,9 @@
     <div id="formContainer">
         <h2 id="reviewHeader">Review your hike!</h2>
         <form id="reviewForm" action="/postReview" method="post">
-            <!--<input type="text" name="location" class="reviewElement" placeholder="Location of Hike">
-            <input type="text" name="trailName" class="reviewElement" placeholder="Name of Trail">-->
             <span class="reviewElement" th:text="${location}"></span>
             <span class="reviewElement" th:text="${name}"></span>
-            <input type="date" name="date" class="reviewElement">
+            <input type="date" name="date" id="reviewDate">
             <label for="difficulty">On a scale from 1-10, how difficult was this hike?</label>
             <input type="range" name="difficulty" id="reviewDifficulty" min="1" max="10">
             <input type="hidden" name="trailName" th:value="${name}"/>
