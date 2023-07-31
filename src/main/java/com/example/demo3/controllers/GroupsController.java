@@ -132,6 +132,45 @@ public class GroupsController {
         return "users/groupPage2";
     }
 
+    @PostMapping("/group/remove")
+    public String removeGroup(@RequestParam Map<String, String> newgroup, HttpServletResponse response, Model model, @ModelAttribute("group") Group group){
+        int gid = Integer.parseInt(newgroup.get("gidd"));
+        int uid = Integer.parseInt(newgroup.get("uidd"));
+        //String suid = newgroup.get("uiddd");
+        System.out.println("d");
+        System.out.println("Delete Group " + uid);
+        //Group g = groupRepo.findByUidsContaining(uid).get(0);
+        Group g = groupRepo.findByGid(gid).get(0);
+        List<Integer> uids = g.getUids();
+        uids.remove(Integer.valueOf(uid));
+        g.setUids(uids);
+        groupRepo.save(g); //delete from database
+        model.addAttribute("ud", uid);
+        return "users/removedGroup";
+    }
+
+    @PostMapping("/users/{ud}/userGroups")
+    public String getAllUserGroups(@RequestParam Map<String, String> newgroup, HttpServletResponse response, Model model, @ModelAttribute("group") Group group){
+        System.out.println("getting groups");
+        String suid = newgroup.get("uiddd");
+        int uid = Integer.parseInt(newgroup.get("uiddd"));
+        //int tid = Integer.parseInt(newgroup.get("tiddd"));
+        //String name = newgroup.get("name");
+       // String location = newgroup.get("location");
+        //String trailName = newgroup.get("trailName");
+
+        //System.out.println("TEST: " + name);
+        //List<Group> groups = groupRepo.getAllByUids(suid);
+        List<Group> groups = groupRepo.findByUidsContaining(uid);
+        model.addAttribute("groups", groups);
+        model.addAttribute("ud", uid);
+        //model.addAttribute("tid", tid);
+        //model.addAttribute("name", name);
+        //model.addAttribute("location", location);
+        //model.addAttribute("trailName", trailName);
+        return "users/groupPage";
+    }
+
     @PostMapping("/users/{ud}/addGroup")
     public String addGroup(@RequestParam Map<String, String> newgroup, HttpServletResponse response, Model model, @ModelAttribute("group") Group group){
         int uid = Integer.parseInt(newgroup.get("uiddd"));

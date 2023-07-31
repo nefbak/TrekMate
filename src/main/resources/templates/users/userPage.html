@@ -107,6 +107,15 @@
                 </form>
                </center>
               </tr> 
+              <br>
+              <tr id="allButtons">
+                <center>
+                  <form th:action="'/users/'+${ud}+'/userGroups'" method="post" id="insideButton">
+                    <input type="hidden" name="uiddd" th:value="${ud}"/>
+                    <button class="btn  " type="submit" style="text-align: center;background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">View Groups</button>
+                  </form> 
+               </center>
+              </tr> 
             </tbody>
           
           <br>
