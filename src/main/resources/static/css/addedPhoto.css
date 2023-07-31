@@ -94,8 +94,10 @@ main {
 
   #photoSpot{
     position:relative;
-    left: 30%;
+    left: 35%;
     margin-bottom: 30px;
+    height: 400px;
+    width: 400px;
   }
 
   #redirect{

@@ -28,7 +28,7 @@
                 <input type="email" class="userElement" name="email" autocomplete="email" placeholder="Email">
                 <input type="password" class="userElement" name="password" autocomplete="new-password" placeholder="New Password"><br>
                 <label for="difficulty"> How experienced at hiking are you?</label>
-                <input type="range" name="difficulty" min="1" max="10">
+                <input type="range" id="userDifficulty" name="difficulty" min="1" max="10">
                 <button type="submit" class="small_login">Register</button>
                 <span th:text="${error} ?: ' '"></span>
                 <br>
