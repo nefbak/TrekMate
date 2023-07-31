@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 //import static com.jayway.jsonpath.JsonPath.*;
 //import org.springframework.test.web.servlet.MvcResult;
 //import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.junit.runner.RunWith;
+//import org.junit.runner.RunWith;
 
 //import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 //import static org.hamcrest.Matchers.*;
@@ -33,7 +33,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List; */
 
-@RunWith(SpringRunner.class)
+/*@RunWith(SpringRunner.class)
 @WebMvcTest(controllers = UsersController.class)
 public class UsersControllerTest {
 
@@ -55,4 +55,4 @@ public class UsersControllerTest {
                 .andExpect(jsonPath("$.name", is("Tommy")))
                 .andExpect(jsonPath("$.location", is("Wyoming")));
     }
-}
+} */

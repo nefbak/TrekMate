@@ -32,6 +32,12 @@
                         
                         </form> 
                       </tr>
+                      <tr>
+                        <form th:action="'/users/'+${ud}+'/userGroups'" method="post">
+                          <input type="hidden" name="uiddd" th:value="${ud}"/>
+                          <button id="trail" style = "background: #61A43D" class= "btn btn-primary"  type="submit">View Groups</button> 
+                        </form> 
+                      </tr>
                   </table>
               </div>
         
