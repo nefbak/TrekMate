@@ -1,4 +1,4 @@
-const forecasting =  "http://api.weatherapi.com/v1/forecast.json?key=954d22e97c3348de8fd42616233007&";
+const forecasting =  "https://api.weatherapi.com/v1/forecast.json?key=954d22e97c3348de8fd42616233007&";
 
 
 var trailLoc = document.getElementById("trailLocation").innerHTML;
