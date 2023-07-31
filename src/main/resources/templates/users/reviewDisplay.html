@@ -63,6 +63,22 @@
 
 
 
+
+
+    <nav class="navbar navbar-nav navbar-dark bg-success" >
+        <div class=" mt-5 mb-4"></div>
+        <ul>
+            <!-- link back to trail page -->
+            <a th:href="@{/ad}"  class=" navbar-brand translate-middle link-light"><form action="/users/trail" method="post">
+                <input type="hidden" name="uiddd" th:value="${ud}"/>
+                <input type="hidden" name="ti" th:value="${tid}"/>
+                <button  class="btn btn-light btn-lg" type="submit" th:text="'Return to Trail Page for '+${name}"> </button>
+                </form></a> 
+            
+        </ul>
+    </nav>
+
+
     <section id="features" >
         <div class="featcontainer">
             
