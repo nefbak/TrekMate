@@ -212,13 +212,7 @@
                 <button class="expView" type="submit" >View All Reviews</button></a> 
             </form> 
 
-            <form th:action="'/users/'+${ud}+'/trailGroups'" method="post">
-                <input type="hidden" name="uiddd" th:value="${ud}"/>
-                <input type="hidden" name="tiddd" th:value="${trail.tid}"/>
-                <input type="hidden" name="trailName" th:value="${trail.name}"/>
-                <input type="hidden" name="location" th:value="${trail.location}"/>
-                <button class="expView" type="submit" >View All Groups</button></a> 
-            </form> 
+ 
         </div>
         
         <div id="trailPhotos">
