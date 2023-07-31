@@ -9,7 +9,7 @@
     <title>Gallery</title>
 
     <div class="header" id="myHeader">
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-light" style="height: 100px;">
         
         <img class="ci" src="/img/logo1trans.png" alt="TrekMate" style="width:70px;height:60px;right: 10px;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
             <li class="nav-item active">
                 <form th:action="'/users/'+${ud}" method="post">
                           <input type="hidden" name="uiddd" th:value="${ud}"/>
-                          <a href=""><button id="logout" style = "background: #ffffff" class= "btn" type="submit" ><img class="nav-link" src="/img/home.png" alt="TrekMate" style="background-color: white; width:40px;height:40px; position: relative; top: -18px; left: -5px;"></button></a> 
+                          <a href=""><button id="logout" style = "background: #ffffff" class= "btn" type="submit" ><img class="nav-link" src="/img/profilePic.png" alt="TrekMate" style="background-color: white; width:40px;height:40px; position: relative; top: -8px; left: -5px;"></button></a> 
                       </form> 
             </li>
 
