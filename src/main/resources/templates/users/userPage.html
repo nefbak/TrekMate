@@ -110,7 +110,7 @@
        <br>
        <div id="attributes" >Experience: </div>
 
-       <div th:text="${user.difficulty}" id="userInfo"></div>
+       <div th:text="${user.difficulty} + '/10' " id="userInfo"></div>
        <br>
        <div id="attributes">Location: </div>
        <div  th:text="${user.location}" id="userInfo"></div>
