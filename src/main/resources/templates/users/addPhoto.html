@@ -48,6 +48,9 @@
 <main>
 	<p id="subtitle">Upload an Image!</p>
     <div id="container">
+            <div id="message" th:if="${message}">
+                <h2 th:text="${message}">
+            </div>
 		<div id="photoForm">
 			<form th:action="'/users/'+${ud}+'/addingPhoto'" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="uiddd" th:value="${ud}"/>

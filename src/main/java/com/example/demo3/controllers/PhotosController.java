@@ -73,6 +73,18 @@ public class PhotosController {
         int uid = Integer.parseInt(incomingUser.get("uiddd"));
         String filename = file.getOriginalFilename();
         int tid = Integer.parseInt(incomingUser.get("tiddd"));
+        
+       
+
+        if(filename.isEmpty()){
+             System.out.println("\n \n \nHEYYYY\n\n\n");
+            String warning = "Please select a photo before uploading.";
+            model.addAttribute("message", warning);
+            model.addAttribute("ud", uid);
+            model.addAttribute("td", tid);
+            return "users/addPhoto";
+        }
+        
         storageService.store(file);
         
         storageService.sendToRepo(uid, tid, filename);
