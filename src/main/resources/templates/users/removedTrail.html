@@ -16,10 +16,11 @@
 <body>
     <center style = 'margin-top: 20px;' id = 'rem'>Trail Successfully Removed From Database</center>
     <center>
-      <form th:action="'/users/'+${ud}" method="post">
-          <input type="hidden" name="uiddd" th:value="${ud}"/>
-          <button class="btn btn-success"  type="submit" >Return to User Page</button>
-        </form> 
+      <form action="/trail/adminView" method="get">
+        <!--<input type="hidden" name="uidd" th:value="${user.uid}" />-->
+        <button id="trail" style = "background: #61A43D" class= "btn btn-primary" type="submit">Return to Trails Admin Page</button> 
+
+        </form>
     </center>
     <br>
 
