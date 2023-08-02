@@ -16,11 +16,12 @@
 <body>
     <center style = 'margin-top: 20px;' id = 'rem'>Sorry! User page not found, it may have been deleted</center>
     <center style = 'font-weight: bold;'>
-      <form action="/users/trail" method="post">
+      <form th:action="'/users/'+${ud}+'/allReviews'" method="post">
         <input type="hidden" name="uiddd" th:value="${ud}"/>
-        <input type="hidden" name="ti" th:value="${tid}"/>
-        <button  class="btn btn-success" type="submit">Return to Trail Page</button>
-      </form>
+        <input type="hidden" name="tiddd" th:value="${tid}"/>
+        <input type="hidden" name="name" th:value="${name}"/>
+        <button class="btn btn-success" type="submit" >Go Back to Reviews</button></a> 
+    </form> 
     </center>
 
     <script>

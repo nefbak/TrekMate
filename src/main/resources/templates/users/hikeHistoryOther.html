@@ -28,6 +28,8 @@
                     <form th:action="'/users/'+${ud}+'/other'" method="post" id="userButtons">
                         <input type="hidden" name = "uiddd" th:value="${ud}">
                         <input type="hidden" name = "uog" th:value="${uog}">
+                        <input type="hidden" name = "name" th:value="${name}">
+                        <input type="hidden" name = "ti" th:value="${tid}">
                         <button class="btn  btn-lg" type="submit" style="text-align: center; background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); font-size: medium;"><img class="pr-5" src="/img/back.png" alt="TrekMate" style="width:40px;height:40px;position: relative; left: -40px; top:5px; "> </button>
                       </form>
                 </li>
@@ -141,6 +143,13 @@
                 <input type="hidden" name="uiddd" th:value="${user.id}">
                 <button class="btn btn-success"  type="submit" >Edit Profile</button>
               </form> -->
+              <!--<form th:action="'/users/'+${ud}+'/other'" method="post" id="userButtons">
+                <input type="hidden" name = "uiddd" th:value="${ud}">
+                <input type="hidden" name = "uog" th:value="${uOg}">
+                <input type="hidden" name = "name" th:value="${name}">
+                <input type="hidden" name = "ti" th:value="${tid}">
+                <button class="btn btn-success"  type="submit"><div class="imgg"><img src="/img/profile.png" alt=""></div></button>
+            </form>-->
             </tbody>
           </table>
 

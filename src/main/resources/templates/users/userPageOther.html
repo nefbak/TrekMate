@@ -158,8 +158,20 @@
                   <form th:action="'/users/'+${ud}+'/userReviewsGuest'" method="post" id="userButtons">
                     <input type="hidden" name = "uiddd" th:value="${ud}">
                     <input type="hidden" name = "uog" th:value="${uOg}">
+                    <input type="hidden" name = "name" th:value="${name}">
+                    <input type="hidden" name = "ti" th:value="${tid}">
                     <button class="btn" type="submit" style="text-align: center; background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">Hike History</button>
                   </form>
+              </center>
+              </tr>
+              <tr>
+                <center>
+                  <form th:action="'/users/'+${uOg}+'/allReviews'" method="post">
+                    <input type="hidden" name="uiddd" th:value="${uOg}"/>
+                    <input type="hidden" name="tiddd" th:value="${tid}"/>
+                    <input type="hidden" name="name" th:value="${name}"/>
+                    <button class="btn" type="submit" style="text-align: center; background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);" >Return to View All Reviews</button></a> 
+                  </form> 
               </center>
               </tr>
               <br>
