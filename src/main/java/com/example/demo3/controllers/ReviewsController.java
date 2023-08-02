@@ -79,7 +79,9 @@ public class ReviewsController {
     public String getAllUserReviewsOther(@RequestParam Map<String, String> newreview, HttpServletResponse response, Model model, @ModelAttribute("review") Review review){
         System.out.println("getting reviews");
         int uid = Integer.parseInt(newreview.get("uiddd"));
+        int tid = Integer.parseInt(newreview.get("ti"));
         int uOg = Integer.parseInt(newreview.get("uog"));
+        String name = newreview.get("name");
         //int tid = Integer.parseInt(newreview.get("tiddd"));
         //String name = newreview.get("name");
         //System.out.println("TEST: " + name);
@@ -87,7 +89,8 @@ public class ReviewsController {
         model.addAttribute("reviews", reviews);
         model.addAttribute("ud", uid);
         model.addAttribute("uog", uOg);
-       // model.addAttribute("tid", tid);
+        model.addAttribute("name", name);
+        model.addAttribute("tid", tid);
         //model.addAttribute("name", name);
         return "users/hikeHistoryOther";
     }

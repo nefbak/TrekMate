@@ -214,6 +214,7 @@ public class UsersController {
         String uid = newuser.get("uiddd");
         String uog = newuser.get("uog");
         String tid = newuser.get("ti");
+        String name = newuser.get("name");
         System.out.println("s");
         //System.out.println("Get User " + uid);
         int id = Integer.parseInt(uid);
@@ -224,9 +225,11 @@ public class UsersController {
             model.addAttribute("user", u);
             model.addAttribute("ud", u.getUid());
             model.addAttribute("uOg", idog);
+            model.addAttribute("name", name);
+            model.addAttribute("tid", tid);
             return "users/userPageOther";
          }
-
+         model.addAttribute("name", name);
          model.addAttribute("ud", uog);
          model.addAttribute("tid", tid);
          return "users/userPageNotFound";

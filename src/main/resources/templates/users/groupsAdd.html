@@ -49,10 +49,11 @@
             <input type="hidden" name="trailName" th:value="${trailName}"/>
             <input type="hidden" name="location" th:value="${location}"/>
             <label for="size">What size do you want this group to be?</label>
-            <input type="number" step="1" name="size"/>
+            <input type="number" step="1" name="size" class="reviewElement"/>
             <input type="hidden" name="uiddd" th:value="${ud}"/>
             <input type="hidden" name="tiddd" th:value="${tid}"/>
-            <input type="text" name="name" placeholder="What is the name of your group?"/>
+            <label for="size">What is the name of your group?</label>
+            <input type="text" name="name" class="reviewElement"/>
             <!--input type="file" name="photos" id="reviewPhotos"-->
             <!--label for="reviewPhotos">Upload your photos</label-->
             <button  type="submit" class="options">Post</button>

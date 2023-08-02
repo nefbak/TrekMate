@@ -161,3 +161,11 @@ padding-left: 20px;
   padding-right: 20px;
 }
 
+#buttonDesign{
+  border-radius: 8px;
+  border: none;
+  padding: 10px 24px;;
+  text-decoration: none;
+  display: inline-block;
+
+}

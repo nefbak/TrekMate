@@ -110,7 +110,7 @@
        <br>
        <div id="attributes" >Experience: </div>
 
-       <div th:text="${user.difficulty}" id="userInfo"></div>
+       <div th:text="${user.difficulty} + '/10' " id="userInfo"></div>
        <br>
        <div id="attributes">Location: </div>
        <div  th:text="${user.location}" id="userInfo"></div>
@@ -122,7 +122,7 @@
                 <center>
                 <form th:action="'/users/edit/'+${ud}" method="post" style="padding-right: 230px;">
                   <input type="hidden" name="uiddd" th:value="${ud}"/>
-                  <button class=" "  type="submit" style="text-align: center; background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">Edit Profile</button>
+                  <button id="buttonDesign"  type="submit" style="text-align: center; background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">Edit Profile</button>
                 </form> 
               </center>
               
@@ -130,7 +130,7 @@
                 <center>
                 <form th:action="'/users/'+${ud}+'/userReviews'" method="post" id="insideButton">
                   <input type="hidden" name = "uiddd" th:value="${ud}">
-                  <button class="  " type="submit" style="text-align: center;background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">Hike History</button>
+                  <button id="buttonDesign" type="submit" style="text-align: center;background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">Hike History</button>
                 </form>
                </center>
             
@@ -139,7 +139,7 @@
                 <center>
                   <form th:action="'/users/'+${ud}+'/userGroups'" method="post" id="insideButton">
                     <input type="hidden" name="uiddd" th:value="${ud}"/>
-                    <button class="  " type="submit" style="text-align: center;background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">View Groups</button>
+                    <button id="buttonDesign" type="submit" style="text-align: center;background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">View Groups</button>
                   </form> 
                </center>
             
@@ -148,7 +148,7 @@
                 <center>
                <form th:action="'/users/'+${ud}+'/gallery'" method="get" id="userButtons">
                   <input type="hidden" name = "uiddd" th:value="${ud}">
-                  <button class="  " type="submit" style="text-align: center;background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">Gallery</button>
+                  <button id="buttonDesign" type="submit" style="text-align: center;background-color: rgb(6, 71, 0); color: rgb(255, 255, 255);">Gallery</button>
                 </form>
                 </center>
               
