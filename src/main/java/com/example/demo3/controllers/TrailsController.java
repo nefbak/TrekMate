@@ -103,7 +103,9 @@ public class TrailsController {
         public String trail(Model model, @RequestParam Map<String, String> newtrail, HttpServletResponse response){
 
         int tid = Integer.parseInt(newtrail.get("ti"));
+        System.out.println("TEST: " + tid);
         int uid = Integer.parseInt(newtrail.get("uiddd"));
+        System.out.println("TEST 2: " + trailRepo.findByTid(tid).size());
         if (trailRepo.findByTid(tid).size() != 0){
          Trail t = trailRepo.findByTid(tid).get(0);
         

@@ -55,6 +55,8 @@ public class GroupsController {
             groupRepo.save(new Group(uids, date, name, location, trailName, difficulty, tid, size));
             model.addAttribute("ud", uid);
             model.addAttribute("tid", tid);
+            model.addAttribute("name", name);
+            model.addAttribute("location", location);
             model.addAttribute("message", "Group Successfully Added");
             return "users/addedGroup";
         }
